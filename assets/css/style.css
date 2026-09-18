@@ -80,8 +80,8 @@ h2 {
 .eyebrow.light {
   color: rgba(255, 255, 255, 0.72);
 }
-.rounded {
-  border-radius: var(--radius);
+.roundeder {
+  border-radius: 12px;
   overflow: hidden;
 }
 
@@ -173,8 +173,62 @@ h2 {
     background 0.2s ease,
     color 0.2s ease;
 }
-.lang-btn:hover {
-  background: rgba(255, 255, 255, 0.18);
+
+/* Botão de idioma */
+.lang-btn-dark {
+  border: 1px solid rgba(0, 0, 0, 0.4);
+  background: transparent;
+  color: rgb(7, 6, 6);
+  font-family: "Manrope", sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  border-radius: 999px;
+  padding: 6px 13px;
+  transition:
+    background 0.2s ease,
+    color 0.2s ease;
+}
+
+.lang-btn-dark:hover {
+  background: rgba(0, 0, 0, 0.18);
+}
+
+/* "Learn more →" do bloco intro — alinhado à esquerda */
+.intro .header-actions.text-link {
+  justify-content: flex-start;
+}
+
+.intro .lang-btn-dark {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 32px;
+  padding: 8px 16px;
+  background: transparent;
+  border-color: #000;
+  color: #000;
+  line-height: 1;
+  font-family: "Manrope", sans-serif;
+  font-weight: 600;
+
+  border-radius: 999px;
+}
+.intro .lang-btn-dark span {
+  display: inline-flex;
+  align-items: center;
+  color: #000;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 1;
+}
+.intro .lang-btn-dark:hover {
+  background: #d3a846;
+  border-color: #d3a846;
+  color: #fff;
+}
+.intro .lang-btn-dark:hover span {
+  color: #fff;
 }
 
 /* Botão hamburguer animado */
@@ -665,7 +719,9 @@ h2 {
   cursor: pointer;
   display: grid;
   place-items: center;
-  transition: background 0.3s ease, transform 0.3s ease;
+  transition:
+    background 0.3s ease,
+    transform 0.3s ease;
 }
 .video-modal-close:hover {
   background: rgba(255, 255, 255, 0.25);
@@ -683,7 +739,9 @@ h2 {
   padding-left: 6px;
   cursor: pointer;
   backdrop-filter: blur(2px);
-  transition: background 0.3s ease, transform 0.3s ease;
+  transition:
+    background 0.3s ease,
+    transform 0.3s ease;
 }
 .play-button::before {
   content: "";
@@ -791,7 +849,9 @@ h2 {
   place-items: center;
   font-size: 13px;
   font-weight: 600;
-  transition: background 0.25s ease, color 0.25s ease;
+  transition:
+    background 0.25s ease,
+    color 0.25s ease;
 }
 .team-socials a:hover {
   background: #fff;
@@ -827,7 +887,9 @@ h2 {
   opacity: 0;
   visibility: hidden;
   transform: scale(0.96);
-  transition: opacity 0.35s ease, transform 0.35s ease;
+  transition:
+    opacity 0.35s ease,
+    transform 0.35s ease;
 }
 .team-stage.has-open .team-expanded {
   opacity: 1;
@@ -934,7 +996,9 @@ h2 {
   color: #fff;
   font-size: 17px;
   cursor: pointer;
-  transition: background 0.25s ease, color 0.25s ease;
+  transition:
+    background 0.25s ease,
+    color 0.25s ease;
 }
 .swiper-btn:hover {
   background: #fff;
@@ -977,11 +1041,7 @@ h2 {
   content: "";
   position: absolute;
   inset: 0;
-  background: linear-gradient(
-    180deg,
-    rgba(0, 0, 0, 0.08),
-    rgba(0, 0, 0, 0.82)
-  );
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.08), rgba(0, 0, 0, 0.82));
 }
 .news-card:has(img.news-cover) > .eyebrow,
 .news-card:has(img.news-cover) > h3,
@@ -1014,7 +1074,10 @@ h2 {
   color: #fff;
 }
 .footer a {
-  transition: color 0.25s ease, background 0.25s ease, opacity 0.25s ease;
+  transition:
+    color 0.25s ease,
+    background 0.25s ease,
+    opacity 0.25s ease;
 }
 .footer .container {
   display: flex;
@@ -1245,7 +1308,9 @@ h2 {
   padding: 20px;
   visibility: hidden;
   opacity: 0;
-  transition: opacity 0.3s ease, visibility 0.3s ease;
+  transition:
+    opacity 0.3s ease,
+    visibility 0.3s ease;
 }
 .policy-modal.open {
   visibility: visible;
