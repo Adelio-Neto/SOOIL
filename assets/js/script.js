@@ -147,42 +147,68 @@ if (window.Swiper && investorSwiperEl) {
   });
 }
 
-if (teamSwiperEl) {
-  const modalEl = document.getElementById("teamModal");
+// Fill-modal helper: populates a Bootstrap modal (photo + detail) from a card.
+const setupFillModal = (modalId, cardSel, imgSel, detailSel, onShow, onHide) => {
+  const modal = document.getElementById(modalId);
+  if (!modal) return;
 
-  const fillTeamModal = (card) => {
-    if (!modalEl || !card) return;
-    const photo = modalEl.querySelector(".team-expanded-photo");
-    const cardPhoto = card.querySelector(".team-photo");
-    if (photo && cardPhoto) {
-      photo.src = cardPhoto.src;
-      photo.alt = cardPhoto.alt;
+  const fill = (card) => {
+    if (!card) return;
+    const photo = modal.querySelector(".team-expanded-photo");
+    const img = card.querySelector(imgSel);
+    if (photo && img) {
+      photo.src = img.src;
+      photo.alt = img.alt;
     }
-    const body = modalEl.querySelector(".team-expanded-body");
-    const detail = card.querySelector(".team-detail");
+    const body = modal.querySelector(".team-expanded-body");
+    const detail = card.querySelector(detailSel);
     if (body && detail) {
       body.innerHTML = "";
       const clone = detail.cloneNode(true);
       const insideClose = clone.querySelector(".team-close");
       if (insideClose) insideClose.remove();
-      clone.classList.remove("team-detail");
       clone.classList.add("team-detail-panel");
       body.appendChild(clone);
     }
   };
 
-  let wired = false;
-  const wireModal = () => {
-    if (wired || !modalEl || !window.bootstrap) return;
-    wired = true;
-    bootstrap.Modal.getOrCreateInstance(modalEl);
-    modalEl.addEventListener("show.bs.modal", (e) => {
-      const trigger = e.relatedTarget || modalEl;
-      const card = trigger && trigger.closest ? trigger.closest(".team-card") : null;
-      fillTeamModal(card);
-      if (teamSwiper) teamSwiper.disable();
+  const wire = () => {
+    if (!window.bootstrap) return;
+    bootstrap.Modal.getOrCreateInstance(modal);
+    modal.addEventListener("show.bs.modal", (e) => {
+      const trigger = e.relatedTarget || modal;
+      const card = trigger && trigger.closest ? trigger.closest(cardSel) : null;
+      fill(card);
+      if (onShow) onShow();
     });
-    modalEl.addEventListener("hidden.bs.modal", () => {
+    modal.addEventListener("hidden.bs.modal", () => {
+      if (onHide) onHide();
+    });
+  };
+
+  if (window.bootstrap) {
+    wire();
+  } else {
+    const retry = setInterval(() => {
+      if (window.bootstrap) {
+        clearInterval(retry);
+        wire();
+      }
+    }, 150);
+    window.addEventListener("load", wire);
+  }
+};
+
+if (teamSwiperEl) {
+  setupFillModal(
+    "teamModal",
+    ".team-card",
+    ".team-photo",
+    ".team-detail",
+    () => {
+      if (teamSwiper) teamSwiper.disable();
+    },
+    () => {
       const stage = teamSwiperEl.closest(".team-stage");
       if (stage) {
         stage.querySelectorAll(".team-toggle, .team-more").forEach((b) => {
@@ -193,21 +219,11 @@ if (teamSwiperEl) {
         teamSwiper.update();
         teamSwiper.enable();
       }
-    });
-  };
-
-  if (window.bootstrap) {
-    wireModal();
-  } else {
-    const retryModal = setInterval(() => {
-      if (window.bootstrap) {
-        clearInterval(retryModal);
-        wireModal();
-      }
-    }, 150);
-    window.addEventListener("load", wireModal);
-  }
+    }
+  );
 }
+
+setupFillModal("sectorModal", ".sector-card", "img", ".sector-detail");
 
 // =========================================================
 // STATS COUNT-UP ANIMATION
