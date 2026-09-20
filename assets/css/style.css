@@ -2189,15 +2189,15 @@ main {
   z-index: 2;
 }
 .team-block {
-  background: var(--dark);
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: #c49531;
+  border: 1px solid rgba(255, 255, 255, 0.14);
   border-radius: 10px;
   padding: 16px 18px 14px;
 }
 .team-role {
   display: block;
   margin: 0 0 4px;
-  color: #c49531;
+  color: #fff;
   font-family: "Manrope", sans-serif;
   font-size: 11px;
   font-weight: 600;
@@ -2206,6 +2206,7 @@ main {
 }
 .team-name {
   margin: 0;
+  color: #fff;
   font-size: 19px;
   line-height: 1.2;
 }
@@ -2254,8 +2255,9 @@ main {
 }
 .team-more:hover,
 .team-more:focus-visible {
-  background: #C49531;
-  border-color: #C49531;
+  background: #fff;
+  border-color: #fff;
+  color: var(--ink);
 }
 
 .team-toggle {
