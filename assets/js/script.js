@@ -148,32 +148,17 @@ if (window.Swiper && investorSwiperEl) {
 }
 
 if (teamSwiperEl) {
-  const stage = teamSwiperEl.closest(".team-stage");
-  const panel = stage ? stage.querySelector(".team-expanded") : null;
+  const modalEl = document.getElementById("teamModal");
 
-  const close = () => {
-    if (stage) {
-      stage.querySelectorAll(".team-toggle, .team-more").forEach((b) => {
-        b.setAttribute("aria-expanded", "false");
-      });
-      stage.classList.remove("has-open");
-    }
-    document.body.style.overflow = "";
-    if (teamSwiper) {
-      teamSwiper.update();
-      teamSwiper.enable();
-    }
-  };
-
-  const open = (card, openBtn) => {
-    if (!stage || !panel) return;
-    const photo = panel.querySelector(".team-expanded-photo");
+  const fillTeamModal = (card) => {
+    if (!modalEl || !card) return;
+    const photo = modalEl.querySelector(".team-expanded-photo");
     const cardPhoto = card.querySelector(".team-photo");
     if (photo && cardPhoto) {
       photo.src = cardPhoto.src;
       photo.alt = cardPhoto.alt;
     }
-    const body = panel.querySelector(".team-expanded-body");
+    const body = modalEl.querySelector(".team-expanded-body");
     const detail = card.querySelector(".team-detail");
     if (body && detail) {
       body.innerHTML = "";
@@ -184,33 +169,44 @@ if (teamSwiperEl) {
       clone.classList.add("team-detail-panel");
       body.appendChild(clone);
     }
-    if (openBtn) openBtn.setAttribute("aria-expanded", "true");
-    stage.classList.add("has-open");
-    if (teamSwiper) teamSwiper.disable();
-    document.body.style.overflow = "hidden";
   };
 
-  // Delegated handler: catches every "Saber mais"/toggle, including the
-  // slides Swiper loop clones (which have no direct listener).
-  stage.addEventListener("click", (e) => {
-    const openBtn = e.target.closest(".team-more, .team-toggle");
-    if (!openBtn) return;
-    const card = openBtn.closest(".team-card");
-    if (card) open(card, openBtn);
-  });
-
-  if (panel) {
-    const panelClose = panel.querySelector(".team-expanded-close");
-    if (panelClose) panelClose.addEventListener("click", close);
-    panel.addEventListener("click", (e) => {
-      if (e.target === panel) close();
+  let wired = false;
+  const wireModal = () => {
+    if (wired || !modalEl || !window.bootstrap) return;
+    wired = true;
+    bootstrap.Modal.getOrCreateInstance(modalEl);
+    modalEl.addEventListener("show.bs.modal", (e) => {
+      const trigger = e.relatedTarget || modalEl;
+      const card = trigger && trigger.closest ? trigger.closest(".team-card") : null;
+      fillTeamModal(card);
+      if (teamSwiper) teamSwiper.disable();
     });
+    modalEl.addEventListener("hidden.bs.modal", () => {
+      const stage = teamSwiperEl.closest(".team-stage");
+      if (stage) {
+        stage.querySelectorAll(".team-toggle, .team-more").forEach((b) => {
+          b.setAttribute("aria-expanded", "false");
+        });
+      }
+      if (teamSwiper) {
+        teamSwiper.update();
+        teamSwiper.enable();
+      }
+    });
+  };
+
+  if (window.bootstrap) {
+    wireModal();
+  } else {
+    const retryModal = setInterval(() => {
+      if (window.bootstrap) {
+        clearInterval(retryModal);
+        wireModal();
+      }
+    }, 150);
+    window.addEventListener("load", wireModal);
   }
-  document.addEventListener("keydown", (e) => {
-    if (e.key === "Escape" && stage && stage.classList.contains("has-open")) {
-      close();
-    }
-  });
 }
 
 // =========================================================

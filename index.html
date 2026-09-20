@@ -551,7 +551,7 @@
                     <div class="team-block">
                       <span class="team-role">Chairman · Board of Directors</span>
                       <h3 class="team-name">Dr. António Mbakassy Jr</h3>
-                      <button class="team-more" type="button">
+                      <button class="team-more" type="button" data-bs-toggle="modal" data-bs-target="#teamModal">
                         Saber mais
                       </button>
                     </div>
@@ -623,7 +623,7 @@
                     <div class="team-block">
                       <span class="team-role">Director</span>
                       <h3 class="team-name">Benjamin Mosquito</h3>
-                      <button class="team-more" type="button">
+                      <button class="team-more" type="button" data-bs-toggle="modal" data-bs-target="#teamModal">
                         Saber mais
                       </button>
                     </div>
@@ -690,7 +690,7 @@
                     <div class="team-block">
                       <span class="team-role">Director</span>
                       <h3 class="team-name">Luís Maio</h3>
-                      <button class="team-more" type="button">
+                      <button class="team-more" type="button" data-bs-toggle="modal" data-bs-target="#teamModal">
                         Saber mais
                       </button>
                     </div>
@@ -755,7 +755,7 @@
                     <div class="team-block">
                       <span class="team-role">Director</span>
                       <h3 class="team-name">Taty Victor</h3>
-                      <button class="team-more" type="button">
+                      <button class="team-more" type="button" data-bs-toggle="modal" data-bs-target="#teamModal">
                         Saber mais
                       </button>
                     </div>
@@ -808,7 +808,7 @@
                     <div class="team-block">
                       <span class="team-role">Director</span>
                       <h3 class="team-name">Alba Gonçalves</h3>
-                      <button class="team-more" type="button">
+                      <button class="team-more" type="button" data-bs-toggle="modal" data-bs-target="#teamModal">
                         Saber mais
                       </button>
                     </div>
@@ -862,18 +862,6 @@
                   </div>
                 </div>
               </div>
-            </div>
-          </div>
-
-          <div class="team-expanded">
-            <button class="team-close team-expanded-close" aria-label="Close">
-              ✕
-            </button>
-            <div class="team-expanded-dialog">
-              <figure class="team-expanded-photo-wrap">
-                <img class="team-expanded-photo" alt="" />
-              </figure>
-              <div class="team-expanded-body"></div>
             </div>
           </div>
         </div>
@@ -1111,15 +1099,41 @@
 
     <button class="back-top" id="backTop" aria-label="Back to top">↑</button>
 
+    <!-- TEAM MODAL (Bootstrap) -->
+    <div
+      class="modal fade team-modal"
+      id="teamModal"
+      tabindex="-1"
+      role="dialog"
+      aria-modal="true"
+      aria-label="Equipa"
+    >
+      <div class="modal-dialog modal-dialog-centered team-modal-dialog">
+        <div class="modal-content team-modal-content">
+          <button
+            type="button"
+            class="btn-close team-expanded-close"
+            data-bs-dismiss="modal"
+            aria-label="Fechar"
+          ></button>
+          <figure class="team-expanded-photo-wrap">
+            <img class="team-expanded-photo" alt="" />
+          </figure>
+          <div class="team-expanded-body"></div>
+        </div>
+      </div>
+    </div>
+
     <!-- Swiper JS -->
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
     <script src="assets/js/script.js"></script>
     <script src="assets/js/i18n.js"></script>
     <script src="assets/js/hero-slider.js"></script>
     <script src="assets/js/header-scroll.js"></script>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <!-- AOS -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
