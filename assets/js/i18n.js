@@ -20,7 +20,8 @@ const enToPt = {
   "Sustainability": "Sustentabilidade",
   "Investors": "Investidores",
   "News & Media": "Notícias e mídia",
-  "Careers": "Carreiras",
+  "Careers": "Candidatura Espontânea",
+  "Candidatura Espontânea": "Candidatura Espontânea",
 
   "Professional working at an industrial facility":
     "Profissional a trabalhar numa instalação industrial",
@@ -61,10 +62,35 @@ const enToPt = {
     "Empenhados em criar valor sustentável para acionistas e comunidades.",
   "We believe in the power of energy to help build human progress.":
     "Acreditamos no poder da energia para ajudar a construir o progresso humano.",
+  "What we believe": "O que acreditamos",
   "Our workforce": "A nossa força de trabalho",
   "Our future": "O nosso futuro",
   "Development": "Desenvolvimento",
   "Innovation": "Inovação",
+  "Investing in the people behind every project":
+    "A investir nas pessoas por trás de cada projeto",
+  "Our team combines engineering, finance and management expertise to deliver results across the energy value chain.":
+    "A nossa equipa combina conhecimentos de engenharia, finanças e gestão para gerar resultados em toda a cadeia de valor da energia.",
+  "We invest in training and career development so that talent grows together with the company.":
+    "Investimos em formação e desenvolvimento de carreira para que o talento cresça juntamente com a empresa.",
+  "Building the next chapter of energy in Angola":
+    "A construir o próximo capítulo da energia em Angola",
+  "We back projects that will shape the country's energy landscape, from new technologies to expanding access.":
+    "Apoiamos projetos que moldarão o panorama energético do país, das novas tecnologias à expansão do acesso.",
+  "Our long-term view pairs patient capital with partners who share the same commitment to sustainable growth.":
+    "A nossa visão de longo prazo associa capital paciente a parceiros que partilham o mesmo compromisso com o crescimento sustentável.",
+  "Capital that follows the asset's life cycle":
+    "Capital que acompanha o ciclo de vida do ativo",
+  "From appraisal to production, we structure financing that matches each phase of the project's risk and cash flow.":
+    "Da avaliação à produção, estruturamos financiamentos que correspondem a cada fase do risco e do fluxo de caixa do projeto.",
+  "Our discipline on milestones protects value while keeping capital available exactly when it is needed.":
+    "A nossa disciplina nos marcos protege o valor, mantendo o capital disponível exatamente quando é necessário.",
+  "New solutions for the projects of tomorrow":
+    "Novas soluções para os projetos de amanhã",
+  "We combine project finance discipline with the flexibility of private equity to open paths that standard tools cannot reach.":
+    "Combinamos a disciplina do project finance com a flexibilidade do capital privado para abrir caminhos que as ferramentas convencionais não alcançam.",
+  "Innovation in structuring allows us to turn ambitious energy projects into bankable realities.":
+    "A inovação na estruturação permite-nos transformar ambiciosos projetos de energia em realidades financiáveis.",
   "Learn more →": "Saber mais →",
   "Who we are": "Quem somos",
   "Mission, vision and values": "Missão, visão e valores",
@@ -92,6 +118,7 @@ const enToPt = {
     "Um compromisso permanente com as pessoas e as comunidades.",
   "Preserving and restoring ecosystems where we operate.":
     "Preservar e restaurar os ecossistemas onde operamos.",
+  "See more": "Saber mais",
   "See more →": "Ver mais →",
   "News from the oil & gas sector": "Notícias do setor de petróleo e gás",
   "Explore news": "Explorar notícias",
@@ -227,7 +254,8 @@ const enToPt = {
   "Sustainability — Sooil Services": "Sustentabilidade — Sooil Services",
   "Investors — Sooil Services": "Investidores — Sooil Services",
   "News & Media — Sooil Services": "Notícias e mídia — Sooil Services",
-  "Careers — Sooil Services": "Carreiras — Sooil Services",
+  "Careers — Sooil Services": "Candidatura Espontânea — Sooil Services",
+  "Candidatura Espontânea — Sooil Services": "Candidatura Espontânea — Sooil Services",
 
   "Back to news": "Voltar às notícias",
   "Read article": "Ler artigo",

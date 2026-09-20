@@ -225,6 +225,8 @@ if (teamSwiperEl) {
 
 setupFillModal("sectorModal", ".sector-card", "img", ".sector-detail");
 
+setupFillModal("cardModal", ".media-card--overlay", "img", ".media-detail");
+
 // =========================================================
 // STATS COUNT-UP ANIMATION
 // =========================================================
@@ -310,5 +312,40 @@ if (policyModal) {
 
   document.addEventListener("keydown", (e) => {
     if (e.key === "Escape") closePolicyModal();
+  });
+}
+
+// =========================================================
+// CANDIDATURA ESPONTÂNEA — FORM (mailto)
+// =========================================================
+const candidaturaForm = document.getElementById("candidaturaForm");
+if (candidaturaForm) {
+  const candidaturaOk = document.getElementById("candidaturaOk");
+  candidaturaForm.addEventListener("submit", (e) => {
+    e.preventDefault();
+    const f = candidaturaForm.elements;
+    const nome = f.nome.value.trim();
+    const bi = f.bi.value.trim();
+    const dataNascimento = f.data_nascimento.value;
+    const pais = f.pais.value.trim();
+
+    if (!nome || !bi || !dataNascimento || !pais) return;
+
+    const subject = encodeURIComponent("Candidatura Espontânea — " + nome);
+    const body = encodeURIComponent(
+      [
+        "Candidatura Espontânea",
+        "",
+        "Nome completo: " + nome,
+        "Bilhete de Identidade: " + bi,
+        "Data de nascimento: " + dataNascimento,
+        "País de nacionalidade: " + pais
+      ].join("\n")
+    );
+
+    window.location.href =
+      "mailto:ama@sooilservices.com?subject=" + subject + "&body=" + body;
+
+    if (candidaturaOk) candidaturaOk.hidden = false;
   });
 }

@@ -309,6 +309,22 @@ main {
     color 0.2s ease;
 }
 
+.lang-btn:hover {
+  background: #d3a846;
+  border-color: #d3a846;
+  color: #fff;
+}
+
+.lang-btn span,
+.lang-btn-dark span {
+  display: inline-flex;
+  align-items: center;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 1;
+  margin-left: 2px;
+}
+
 .lang-btn-dark:hover {
   background: rgba(0, 0, 0, 0.18);
 }
@@ -318,7 +334,8 @@ main {
   justify-content: flex-start;
 }
 
-.intro .lang-btn-dark {
+.intro .lang-btn-dark,
+.intro-layout .lang-btn-dark {
   display: inline-flex;
   align-items: center;
   gap: 8px;
@@ -333,7 +350,8 @@ main {
 
   border-radius: 999px;
 }
-.intro .lang-btn-dark span {
+.intro .lang-btn-dark span,
+.intro-layout .lang-btn-dark span {
   display: inline-flex;
   align-items: center;
   color: #000;
@@ -341,12 +359,14 @@ main {
   font-size: 20px;
   line-height: 1;
 }
-.intro .lang-btn-dark:hover {
+.intro .lang-btn-dark:hover,
+.intro-layout .lang-btn-dark:hover {
   background: #d3a846;
   border-color: #d3a846;
   color: #fff;
 }
-.intro .lang-btn-dark:hover span {
+.intro .lang-btn-dark:hover span,
+.intro-layout .lang-btn-dark:hover span {
   color: #fff;
 }
 
@@ -675,6 +695,26 @@ main {
   font-size: 12px;
 }
 
+/* Secção sustento — descrição com 2 linhas e botão no padrão de idioma */
+#sustentabilidade .media-card p {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  min-height: 36px;
+}
+#sustentabilidade .media-card a.lang-btn-dark {
+  color: #000;
+}
+#sustentabilidade .media-card a.lang-btn-dark:hover {
+  background: #d3a846;
+  border-color: #d3a846;
+  color: #fff;
+}
+#sustentabilidade .media-card a.lang-btn-dark:hover span {
+  color: #fff;
+}
+
 /* Cards overlay — título sobre a imagem + botão no hover */
 .media-card--overlay {
   position: relative;
@@ -682,7 +722,7 @@ main {
   height: 260px;
   border-radius: var(--radius);
 }
-.media-card--overlay img {
+.media-grid .media-card--overlay img {
   position: absolute;
   inset: 0;
   width: 100%;
@@ -758,6 +798,9 @@ main {
 }
 .media-card--overlay:hover .media-card__body a:hover {
   color: #F1E29F;
+}
+.media-card--overlay .media-detail {
+  display: none;
 }
 @media (max-width: 576px) {
   .media-card--overlay {
@@ -938,7 +981,8 @@ main {
   overflow: hidden;
   border: 1px solid rgba(255, 255, 255, 0.28);
   border-radius: 12px;
-  margin: 0 20px;
+  width: min(calc(100% - 40px), var(--container));
+  margin-inline: auto;
   background: url("https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=1920&q=80")
     center/cover no-repeat;
 }
@@ -1969,8 +2013,11 @@ main {
   #sustentabilidade .media-grid.three {
     grid-template-columns: 1fr;
   }
-  .media-card img {
+.media-card img {
     height: 140px;
+  }
+  #sustentabilidade .media-card img {
+    height: 180px;
   }
   .media-card h4 {
     font-size: 15px;
@@ -1995,8 +2042,14 @@ main {
     margin-top: -10px;
   }
 
-  .news-grid {
+.news-grid {
     grid-template-columns: 1fr;
+  }
+  .news-card {
+    min-height: 220px;
+  }
+  .news-card:has(img.news-cover) {
+    min-height: 300px;
   }
   .news-card {
     min-height: 180px;
@@ -2068,6 +2121,28 @@ main {
 @media (max-width: 480px) {
   .hero {
     min-height: 340px;
+  }
+}
+
+@media (max-width: 680px) {
+  .footer .container {
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+  .footer--list,
+  .footer--socialMedia ul,
+  .footer--policyLinks,
+  .footer--brands {
+    justify-content: center;
+  }
+  .footer--links,
+  .footer--socialMedia {
+    width: 100%;
+  }
+  .footer--privacy {
+    align-items: center;
+    margin-left: 0;
   }
 }
 
