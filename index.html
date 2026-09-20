@@ -51,12 +51,19 @@
       /></a>
 
       <nav class="desktop-nav" aria-label="Primary navigation">
-        <a href="about.html">About Us</a>
-        <a href="what-we-do.html">What We Do</a>
-        <a href="sustainability.html">Sustainability</a>
-        <a href="investors.html">Investors</a>
-        <a href="news.html">News &amp; Media</a>
-        <a href="careers.html">Careers</a>
+        <a class="active" href="index.html">Home</a>
+        <div class="nav-item">
+          <a href="#0">About</a>
+          <div class="dropdown">
+            <a href="about.html">About Us</a>
+            <a href="history.html">Our history</a>
+            <a href="what-we-do.html">What we do</a>
+          </div>
+</div>
+          <a href="sustainability.html">Sustainability</a>
+          <a href="investors.html">Investors</a>
+          <a href="news.html">News &amp; Media</a>
+          <a href="careers.html">Careers</a>
       </nav>
 
       <div class="header-actions">
@@ -80,8 +87,9 @@
       </div>
 
       <nav class="mobile-nav" id="mobileNav">
+        <a class="active" href="index.html">Home</a>
         <a href="about.html">About Us</a>
-        <a href="what-we-do.html">What We Do</a>
+        <a href="history.html">Our history</a>
         <a href="sustainability.html">Sustainability</a>
         <a href="investors.html">Investors</a>
         <a href="news.html">News &amp; Media</a>
@@ -280,45 +288,52 @@
         </div>
 
         <div class="media-grid four">
-          <article class="media-card" data-aos="fade-up">
+          <article class="media-card media-card--overlay" data-aos="fade-up">
             <img
               src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=700&q=80"
               alt=""
             />
-            <h4>Our workforce</h4>
-            <a href="#">Learn more →</a>
+            <div class="media-card__body">
+              <h4>Our workforce</h4>
+              <a href="#">Learn more →</a>
+            </div>
           </article>
-          <article class="media-card" data-aos="fade-up">
+          <article class="media-card media-card--overlay" data-aos="fade-up">
             <img
               src="https://images.unsplash.com/photo-1500534623283-312aade485b7?auto=format&fit=crop&w=700&q=80"
               alt=""
             />
-            <h4>Our future</h4>
-            <a href="#">Learn more →</a>
+            <div class="media-card__body">
+              <h4>Our future</h4>
+              <a href="#">Learn more →</a>
+            </div>
           </article>
-          <article class="media-card" data-aos="fade-up">
+          <article class="media-card media-card--overlay" data-aos="fade-up">
             <img
               src="https://images.unsplash.com/photo-1473448912268-2022ce9509d8?auto=format&fit=crop&w=700&q=80"
               alt=""
             />
-            <h4>Development</h4>
-            <a href="#">Learn more →</a>
+            <div class="media-card__body">
+              <h4>Development</h4>
+              <a href="#">Learn more →</a>
+            </div>
           </article>
-          <article class="media-card" data-aos="fade-up">
+          <article class="media-card media-card--overlay" data-aos="fade-up">
             <img
               src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=700&q=80"
               alt=""
             />
-            <h4>Innovation</h4>
-            <a href="#">Learn more →</a>
+            <div class="media-card__body">
+              <h4>Innovation</h4>
+              <a href="#">Learn more →</a>
+            </div>
           </article>
         </div>
       </section>
 
       <!-- STATS -->
-      <section class="stats-section">
+      <section class="stats-section stats-section--image">
         <div class="container">
-          <h2>At a glance</h2>
           <div class="stats-grid">
             <div class="stat-card" data-aos="fade-up">
               <strong>30+</strong><span>Years of business experience</span>
@@ -509,10 +524,16 @@
 
       <!-- TEAM -->
       <section class="container team-section">
-        <div class="split-heading" data-aos="fade-up">
+        <div class="split-heading team-head" data-aos="fade-up">
           <div>
             <p class="eyebrow">Leadership</p>
             <h2>Our Team</h2>
+          </div>
+          <div class="team-controls">
+            <button class="swiper-btn team-prev" type="button" aria-label="Previous">
+              ←
+            </button>
+            <button class="swiper-btn team-next" type="button" aria-label="Next">→</button>
           </div>
         </div>
 
@@ -526,37 +547,14 @@
                     src="assets/img/images/team/11.png"
                     alt="Dr. António Mbakassy Jr"
                   / data-aos="fade-in">
-                  <div class="team-card-info" data-aos="fade-up">
-                    <p class="eyebrow light">Chairman · Board of Directors</p>
-                    <h3>Dr. António Mbakassy Jr</h3>
-                  </div>
-                  <div class="team-hover">
-                    <div class="team-socials">
-                      <a
-                        href="https://web.facebook.com/sooilservices12"
-                        target="_blank"
-                        rel="noopener"
-                        aria-label="Facebook"
-                        >f</a
-                      >
-                      <a
-                        href="https://web.facebook.com/sooilservices12"
-                        target="_blank"
-                        rel="noopener"
-                        aria-label="LinkedIn"
-                        >in</a
-                      >
-                      <a
-                        href="https://www.instagram.com/sooil_services/"
-                        target="_blank"
-                        rel="noopener"
-                        aria-label="Instagram"
-                        >ig</a
-                      >
+                  <div class="team-block-wrap">
+                    <div class="team-block">
+                      <span class="team-role">Chairman · Board of Directors</span>
+                      <h3 class="team-name">Dr. António Mbakassy Jr</h3>
+                      <button class="team-more" type="button">
+                        Saber mais
+                      </button>
                     </div>
-                    <button class="team-open" aria-expanded="false">
-                      Open
-                    </button>
                   </div>
                   <div class="team-detail">
                     <button class="team-close" aria-label="Close">✕</button>
@@ -621,37 +619,14 @@
                     src="assets/img/images/team/421.png"
                     alt="Benjamin Mosquito"
                   / data-aos="fade-in">
-                  <div class="team-card-info" data-aos="fade-up">
-                    <p class="eyebrow light">Director</p>
-                    <h3>Benjamin Mosquito</h3>
-                  </div>
-                  <div class="team-hover">
-                    <div class="team-socials">
-                      <a
-                        href="https://web.facebook.com/sooilservices12"
-                        target="_blank"
-                        rel="noopener"
-                        aria-label="Facebook"
-                        >f</a
-                      >
-                      <a
-                        href="https://web.facebook.com/sooilservices12"
-                        target="_blank"
-                        rel="noopener"
-                        aria-label="LinkedIn"
-                        >in</a
-                      >
-                      <a
-                        href="https://www.instagram.com/sooil_services/"
-                        target="_blank"
-                        rel="noopener"
-                        aria-label="Instagram"
-                        >ig</a
-                      >
+                  <div class="team-block-wrap">
+                    <div class="team-block">
+                      <span class="team-role">Director</span>
+                      <h3 class="team-name">Benjamin Mosquito</h3>
+                      <button class="team-more" type="button">
+                        Saber mais
+                      </button>
                     </div>
-                    <button class="team-open" aria-expanded="false">
-                      Open
-                    </button>
                   </div>
                   <div class="team-detail">
                     <button class="team-close" aria-label="Close">✕</button>
@@ -711,37 +686,14 @@
                     src="assets/img/images/team/021.png"
                     alt="Luís Maio"
                   / data-aos="fade-in">
-                  <div class="team-card-info" data-aos="fade-up">
-                    <p class="eyebrow light">Director</p>
-                    <h3>Luís Maio</h3>
-                  </div>
-                  <div class="team-hover">
-                    <div class="team-socials">
-                      <a
-                        href="https://web.facebook.com/sooilservices12"
-                        target="_blank"
-                        rel="noopener"
-                        aria-label="Facebook"
-                        >f</a
-                      >
-                      <a
-                        href="https://web.facebook.com/sooilservices12"
-                        target="_blank"
-                        rel="noopener"
-                        aria-label="LinkedIn"
-                        >in</a
-                      >
-                      <a
-                        href="https://www.instagram.com/sooil_services/"
-                        target="_blank"
-                        rel="noopener"
-                        aria-label="Instagram"
-                        >ig</a
-                      >
+                  <div class="team-block-wrap">
+                    <div class="team-block">
+                      <span class="team-role">Director</span>
+                      <h3 class="team-name">Luís Maio</h3>
+                      <button class="team-more" type="button">
+                        Saber mais
+                      </button>
                     </div>
-                    <button class="team-open" aria-expanded="false">
-                      Open
-                    </button>
                   </div>
                   <div class="team-detail">
                     <button class="team-close" aria-label="Close">✕</button>
@@ -799,37 +751,14 @@
                     src="assets/img/images/team/m1.png"
                     alt="Taty Victor"
                   / data-aos="fade-in">
-                  <div class="team-card-info" data-aos="fade-up">
-                    <p class="eyebrow light">Director</p>
-                    <h3>Taty Victor</h3>
-                  </div>
-                  <div class="team-hover">
-                    <div class="team-socials">
-                      <a
-                        href="https://web.facebook.com/sooilservices12"
-                        target="_blank"
-                        rel="noopener"
-                        aria-label="Facebook"
-                        >f</a
-                      >
-                      <a
-                        href="https://web.facebook.com/sooilservices12"
-                        target="_blank"
-                        rel="noopener"
-                        aria-label="LinkedIn"
-                        >in</a
-                      >
-                      <a
-                        href="https://www.instagram.com/sooil_services/"
-                        target="_blank"
-                        rel="noopener"
-                        aria-label="Instagram"
-                        >ig</a
-                      >
+                  <div class="team-block-wrap">
+                    <div class="team-block">
+                      <span class="team-role">Director</span>
+                      <h3 class="team-name">Taty Victor</h3>
+                      <button class="team-more" type="button">
+                        Saber mais
+                      </button>
                     </div>
-                    <button class="team-open" aria-expanded="false">
-                      Open
-                    </button>
                   </div>
                   <div class="team-detail">
                     <button class="team-close" aria-label="Close">✕</button>
@@ -875,37 +804,14 @@
                     src="assets/img/images/team/222.png"
                     alt="Alba Gonçalves"
                   / data-aos="fade-in">
-                  <div class="team-card-info" data-aos="fade-up">
-                    <p class="eyebrow light">Director</p>
-                    <h3>Alba Gonçalves</h3>
-                  </div>
-                  <div class="team-hover">
-                    <div class="team-socials">
-                      <a
-                        href="https://web.facebook.com/sooilservices12"
-                        target="_blank"
-                        rel="noopener"
-                        aria-label="Facebook"
-                        >f</a
-                      >
-                      <a
-                        href="https://web.facebook.com/sooilservices12"
-                        target="_blank"
-                        rel="noopener"
-                        aria-label="LinkedIn"
-                        >in</a
-                      >
-                      <a
-                        href="https://www.instagram.com/sooil_services/"
-                        target="_blank"
-                        rel="noopener"
-                        aria-label="Instagram"
-                        >ig</a
-                      >
+                  <div class="team-block-wrap">
+                    <div class="team-block">
+                      <span class="team-role">Director</span>
+                      <h3 class="team-name">Alba Gonçalves</h3>
+                      <button class="team-more" type="button">
+                        Saber mais
+                      </button>
                     </div>
-                    <button class="team-open" aria-expanded="false">
-                      Open
-                    </button>
                   </div>
                   <div class="team-detail">
                     <button class="team-close" aria-label="Close">✕</button>
@@ -957,24 +863,71 @@
                 </div>
               </div>
             </div>
-
-            <div class="team-nav">
-              <button class="swiper-btn team-prev" aria-label="Previous">
-                ←
-              </button>
-              <div class="swiper-pagination"></div>
-              <button class="swiper-btn team-next" aria-label="Next">→</button>
-            </div>
           </div>
 
           <div class="team-expanded">
             <button class="team-close team-expanded-close" aria-label="Close">
               ✕
             </button>
-            <figure class="team-expanded-photo-wrap">
-              <img class="team-expanded-photo" alt="" />
-            </figure>
-            <div class="team-expanded-body"></div>
+            <div class="team-expanded-dialog">
+              <figure class="team-expanded-photo-wrap">
+                <img class="team-expanded-photo" alt="" />
+              </figure>
+              <div class="team-expanded-body"></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- INVESTOR LOGOS SLIDER -->
+      <section class="section container investor-section">
+        <div class="swiper investor-swiper">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide">
+              <div class="investor-logo">
+                <img src="assets/img/images/partners/01.png" alt="" />
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="investor-logo">
+                <img src="assets/img/images/partners/02.png" alt="" />
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="investor-logo">
+                <img src="assets/img/images/partners/03.png" alt="" />
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="investor-logo">
+                <img src="assets/img/images/partners/04.png" alt="" />
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="investor-logo">
+                <img src="assets/img/images/partners/05.png" alt="" />
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="investor-logo">
+                <img src="assets/img/images/partners/06.png" alt="" />
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="investor-logo">
+                <img src="assets/img/images/partners/07.png" alt="" />
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="investor-logo">
+                <img src="assets/img/images/partners/08.png" alt="" />
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="investor-logo">
+                <img src="assets/img/images/partners/09.png" alt="" />
+              </div>
+            </div>
           </div>
         </div>
       </section>

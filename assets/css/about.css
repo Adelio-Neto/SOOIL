@@ -43,6 +43,210 @@
   position: relative;
   z-index: 2;
 }
+.page-hero--compact {
+  min-height: 260px;
+  padding: 90px 0 40px;
+}
+
+/* Layout fixo — texto esquerda fixo, conteúdo direito desliza */
+.intro-layout {
+  display: grid;
+  grid-template-columns: minmax(320px, 40%) 1fr;
+  gap: 48px;
+  align-items: start;
+  padding: var(--space) 0;
+}
+.intro-layout__sticky {
+  position: sticky;
+  top: 110px;
+  min-width: 0;
+}
+.intro-layout__scroll {
+  min-width: 0;
+}
+.intro-layout .intro-copy h2 {
+  font-size: clamp(24px, 3vw, 34px);
+  max-width: 520px;
+  margin-bottom: 24px;
+  line-height: 1.18;
+}
+.intro-layout .intro-copy .description {
+  font-size: 15px;
+  max-width: 460px;
+}
+.intro-layout .intro-copy .btn-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 14px;
+  border: 1px solid rgba(0, 0, 0, 0.35);
+  background: transparent;
+  color: var(--ink);
+  font-family: "Manrope", sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  border-radius: 999px;
+  padding: 6px 13px;
+  transition:
+    background 0.2s ease,
+    color 0.2s ease,
+    border-color 0.2s ease;
+}
+.intro-layout .intro-copy .btn-pill span {
+  display: inline-flex;
+  align-items: center;
+  color: var(--ink);
+  font-size: 20px;
+  line-height: 1;
+}
+.intro-layout .intro-copy .btn-pill:hover {
+  background: #C49531;
+  border-color: #C49531;
+  color: #fff;
+}
+.intro-layout .intro-copy .btn-pill:hover span {
+  color: #fff;
+}
+.intro-layout__scroll .split-heading h2 {
+  font-size: clamp(22px, 2.6vw, 32px);
+}
+#team {
+  scroll-margin-top: 90px;
+}
+.intro-layout__scroll .about-bento {
+  margin-top: 28px;
+}
+.intro-layout__scroll .feature-photo {
+  height: 400px;
+  border: 1px solid rgba(7, 16, 19, 0.12);
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+@media (max-width: 680px) {
+  .intro-layout__scroll .about-bento {
+    grid-template-columns: 1fr;
+  }
+  .intro-layout__scroll .feature-photo {
+    height: 260px;
+  }
+}
+/* INVESTOR LOGOS */
+.investor-logo-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+  gap: 14px;
+}
+.investor-logo {
+  display: grid;
+  place-items: center;
+  height: 100px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: #fff;
+  padding: 14px;
+  transition:
+    border-color 0.25s ease,
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+}
+.investor-logo:hover {
+  border-color: #C49531;
+  transform: translateY(-3px);
+  box-shadow: 0 14px 30px rgba(7, 16, 19, 0.08);
+}
+.investor-logo img {
+  width: 54px;
+  height: 54px;
+  object-fit: contain;
+  filter: grayscale(1);
+  opacity: 0.85;
+  transition:
+    filter 0.25s ease,
+    opacity 0.25s ease;
+}
+.investor-logo:hover img {
+  filter: grayscale(0);
+  opacity: 1;
+}
+
+@media (max-width: 900px) {
+  .intro-layout {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+  .intro-layout__sticky {
+    position: static;
+  }
+}
+
+/* SECTOR SWIPER (what-we-do) */
+.sector-swiper {
+  width: 100%;
+  padding-bottom: 46px;
+}
+.sector-swiper .swiper-slide {
+  height: auto;
+}
+.sector-swiper .media-card {
+  margin: 0;
+}
+.sector-swiper .media-card a {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  align-self: flex-start;
+  margin-top: 10px;
+  border: 1px solid rgba(0, 0, 0, 0.35);
+  background: transparent;
+  color: var(--ink);
+  font-family: "Manrope", sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  border-radius: 999px;
+  padding: 6px 13px;
+  transition:
+    background 0.2s ease,
+    color 0.2s ease,
+    border-color 0.2s ease;
+}
+.sector-swiper .media-card a:hover {
+  background: #C49531;
+  border-color: #C49531;
+  color: #fff;
+}
+.sector-controls {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 22px;
+  margin-top: 6px;
+}
+.sector-swiper .swiper-pagination {
+  position: static;
+  width: auto;
+}
+.sector-swiper .swiper-pagination-bullet {
+  width: 7px;
+  height: 7px;
+  background: rgba(0, 0, 0, 0.25);
+  opacity: 1;
+}
+.sector-swiper .swiper-pagination-bullet-active {
+  background: var(--ink);
+  width: 22px;
+  border-radius: 99px;
+}
+.sector-swiper .swiper-btn {
+  border-color: rgba(0, 0, 0, 0.25);
+  background: transparent;
+  color: var(--ink);
+}
+.sector-swiper .swiper-btn:hover {
+  background: var(--ink);
+  color: #fff;
+}
 
 /* =========================================================
    SOBRE NÓS — BENTO

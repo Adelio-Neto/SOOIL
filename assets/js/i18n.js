@@ -13,6 +13,8 @@ const enToPt = {
   "Video": "Vídeo",
   "Video thumbnail": "Miniatura do vídeo",
 
+  "Home": "Início",
+  "About": "Sobre",
   "About Us": "Sobre nós",
   "What We Do": "O que fazemos",
   "Sustainability": "Sustentabilidade",
@@ -33,6 +35,8 @@ const enToPt = {
   "New financial solutions for the next generation of energy projects.": "Novas soluções financeiras para a próxima geração de projetos de energia.",
   "What we do": "O que fazemos",
   "Investor Relations": "Relações com investidores",
+  "Investors fueling": "Investidores que impulsionam",
+  "Angola's energy future": "o futuro energético de Angola",
 
   "Strategic investments driving<br>the strength of Angola's oil sector":
     "Investimentos estratégicos que impulsionam<br>a força do setor petrolífero angolano",
@@ -62,6 +66,15 @@ const enToPt = {
   "Development": "Desenvolvimento",
   "Innovation": "Inovação",
   "Learn more →": "Saber mais →",
+  "Who we are": "Quem somos",
+  "Mission, vision and values": "Missão, visão e valores",
+  "Values": "Valores",
+  "Our mission, vision and values guide everything we do.":
+    "A nossa missão, visão e valores orientam tudo o que fazemos.",
+  "Strategic financing, consolidated expertise and a strong commitment to sustainable growth, always focused on creating value for the sector and for society.":
+    "Financiamento estratégico, conhecimento consolidado e um forte compromisso com o crescimento sustentável, sempre focados em criar valor para o setor e para a sociedade.",
+  "To provide investment capital and structured financing solutions that strengthen and consolidate Angola's Oil & Gas exploration and production projects.":
+    "Fornecer capital de investimento e soluções de financiamento estruturado que reforçam e consolidam os projetos de exploração e produção de Oil & Gas em Angola.",
   "At a glance": "Em resumo",
   "Years of business experience": "Anos de experiência empresarial",
   "Years of banking experience": "Anos de experiência bancária",
@@ -147,6 +160,25 @@ const enToPt = {
   "Industrial facility in the oil sector":
     "Instalação industrial do setor petrolífero",
   "Contact us": "Fale connosco",
+  "Our history": "A nossa história",
+  "The story of Sooil": "A história da Sooil",
+  "A journey built on banking, finance and energy":
+    "Uma jornada construída sobre a banca, as finanças e a energia",
+  "Sooil Services, Lda was founded to channel private capital and deep banking expertise into Angola's Oil and Gas sector — the engine of the country's economy.":
+    "A Sooil Services, Lda foi criada para canalizar capital privado e uma profunda experiência bancária para o setor de Petróleo e Gás de Angola — o motor da economia do país.",
+  "Built on more than 30 years of business experience and 26 years in banking, we invest in producing oil fields, combining disciplined capital with a profound understanding of Angola's energy landscape.":
+    "Construída sobre mais de 30 anos de experiência empresarial e 26 anos na banca, investimos em campos de petróleo em produção, combinando capital disciplinado com um profundo entendimento do panorama energético de Angola.",
+  "Milestones": "Marcos",
+  "Building trust, step by step": "A construir confiança, passo a passo",
+  "The foundations": "As fundações",
+  "Our founders built their careers in Angola's banking and financial sector, mastering the tools of structured finance.":
+    "Os nossos fundadores construíram as suas carreiras no setor bancário e financeiro de Angola, dominando os instrumentos do financiamento estruturado.",
+  "The track record": "O historial",
+  "More than three decades of business experience and 26 years of banking expertise guide every investment decision.":
+    "Mais de três décadas de experiência empresarial e 26 anos de experiência bancária orientam cada decisão de investimento.",
+  "Today": "Hoje",
+  "Sooil Services invests in producing oil fields, creating lasting value for shareholders, for the sector and for Angola.":
+    "A Sooil Services investe em campos de petróleo em produção, criando valor duradouro para os acionistas, para o setor e para Angola.",
   "Our commitment is to generate sustainable value for shareholders and to contribute to improving the quality of life for future generations, through strategic investments in the most vital sector of the Angolan economy.":
     "O nosso compromisso é gerar valor sustentável para os acionistas e contribuir para melhorar a qualidade de vida das futuras gerações, através de investimentos estratégicos no setor mais vital da economia angolana.",
   "Visit our website": "Visitar o nosso site",

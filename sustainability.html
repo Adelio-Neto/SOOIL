@@ -32,6 +32,12 @@
 
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
 
+    <!-- Swiper CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+      rel="stylesheet"
+    />
+
     <link rel="stylesheet" href="assets/css/style.css" />
     <link rel="stylesheet" href="assets/css/about.css" />
   </head>
@@ -43,9 +49,16 @@
       /></a>
 
       <nav class="desktop-nav" aria-label="Primary navigation">
-        <a href="about.html">About Us</a>
-        <a href="what-we-do.html">What We Do</a>
-        <a href="sustainability.html">Sustainability</a>
+        <a href="index.html">Home</a>
+        <div class="nav-item">
+          <a href="#0">About</a>
+          <div class="dropdown">
+            <a href="about.html">About Us</a>
+            <a href="history.html">Our history</a>
+            <a href="what-we-do.html">What we do</a>
+          </div>
+</div>
+          <a class="active" href="sustainability.html">Sustainability</a>
         <a href="investors.html">Investors</a>
         <a href="news.html">News &amp; Media</a>
         <a href="careers.html">Careers</a>
@@ -72,8 +85,9 @@
       </div>
 
       <nav class="mobile-nav" id="mobileNav">
+        <a href="index.html">Home</a>
         <a href="about.html">About Us</a>
-        <a href="what-we-do.html">What We Do</a>
+        <a href="history.html">Our history</a>
         <a href="sustainability.html">Sustainability</a>
         <a href="investors.html">Investors</a>
         <a href="news.html">News &amp; Media</a>
@@ -83,7 +97,7 @@
 
     <main>
       <!-- PAGE HERO -->
-      <section class="page-hero">
+      <section class="page-hero page-hero--compact">
         <div class="page-hero-bg">
           <img
             src="assets/img/images/gallery/full/1.png"
@@ -103,30 +117,32 @@
         </div>
       </section>
 
-      <!-- INTRO -->
-      <section class="intro section container">
-        <div class="intro-copy">
-          <p class="eyebrow">Sustainability</p>
-          <h2>Environmental protection</h2>
-          <p class="description">
-            Our approach seeks to create lasting value while protecting natural
-            resources and ecosystems.
-          </p>
-          <a class="text-link" href="about.html"
-            >Our commitment <span>→</span></a
-          >
+      <!-- STICKY INTRO -->
+      <section class="intro-layout container">
+        <div class="intro-layout__sticky">
+          <div class="intro-copy">
+            <p class="eyebrow">Sustainability</p>
+            <h2>Environmental protection</h2>
+            <p class="description">
+              Our approach seeks to create lasting value while protecting natural
+              resources and ecosystems.
+            </p>
+            <a class="text-link btn-pill" href="about.html"
+              >Our commitment <span>→</span></a
+            >
+          </div>
         </div>
 
+        <div class="intro-layout__scroll">
         <div class="feature-photo rounded" data-aos="fade-up">
           <img
             src="assets/img/images/parallax/video_section_background.jpg"
             alt="Natural landscape near energy operations"
           />
         </div>
-      </section>
 
       <!-- BENTO PILLARS -->
-      <section class="container bento-grid about-bento">
+      <section class="bento-grid about-bento">
         <article class="bento-card image-card card-wide about-card" data-aos="fade-up">
           <img src="assets/img/images/gallery/full/3.jpg" alt="" />
           <div class="card-overlay"></div>
@@ -174,44 +190,44 @@
         </article>
       </section>
 
-      <!-- QUOTE -->
+      <!-- IMPACT SWIPER -->
       <section class="section container">
-        <blockquote class="article-quote">
-          <p>
-            Sustainable value means generating returns for shareholders while
-            improving the quality of life of future generations.
-          </p>
-        </blockquote>
-
         <div class="split-heading" data-aos="fade-up">
           <div>
             <p class="eyebrow">Our responsibility</p>
             <h2>Every investment carries a long-term view</h2>
           </div>
-          <a class="circle-link" href="about.html#contact"
-            ><span>Talk to us</span><b>↗</b></a
-          >
         </div>
 
-        <div class="media-grid three">
-          <article class="media-card" data-aos="fade-up">
-            <img src="assets/img/images/gallery/full/4.jpg" alt="" />
-            <h4>Communities</h4>
-            <p>Social investment in education, health and local development.</p>
-            <a href="about.html">Learn more →</a>
-          </article>
-          <article class="media-card" data-aos="fade-up">
-            <img src="assets/img/images/gallery/full/2.jpg" alt="" />
-            <h4>Environment</h4>
-            <p>Action to minimize impact and protect biodiversity.</p>
-            <a href="about.html">Learn more →</a>
-          </article>
-          <article class="media-card" data-aos="fade-up">
-            <img src="assets/img/images/gallery/full/01.jpg" alt="" />
-            <h4>Governance</h4>
-            <p>Transparent decisions guided by ethics and accountability.</p>
-            <a href="about.html">Learn more →</a>
-          </article>
+        <div class="swiper sector-swiper">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide">
+              <article class="media-card">
+                <img src="assets/img/images/gallery/full/4.jpg" alt="" />
+                <h4>Communities</h4>
+                <p>Social investment in education, health and local development.</p>
+                <a href="about.html">Learn more →</a>
+              </article>
+            </div>
+            <div class="swiper-slide">
+              <article class="media-card">
+                <img src="assets/img/images/gallery/full/2.jpg" alt="" />
+                <h4>Environment</h4>
+                <p>Action to minimize impact and protect biodiversity.</p>
+                <a href="about.html">Learn more →</a>
+              </article>
+            </div>
+            <div class="swiper-slide">
+              <article class="media-card">
+                <img src="assets/img/images/gallery/full/01.jpg" alt="" />
+                <h4>Governance</h4>
+                <p>Transparent decisions guided by ethics and accountability.</p>
+                <a href="about.html">Learn more →</a>
+              </article>
+            </div>
+          </div>
+        </div>
+      </section>
         </div>
       </section>
     </main>
@@ -392,6 +408,9 @@
     </div>
 
     <button class="back-top" id="backTop" aria-label="Back to top">↑</button>
+
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
     <script src="assets/js/script.js"></script>
     <script src="assets/js/i18n.js"></script>

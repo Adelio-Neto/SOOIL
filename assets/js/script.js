@@ -90,17 +90,59 @@ if (window.Swiper && teamSwiperEl) {
     spaceBetween: 18,
     loop: true,
     grabCursor: true,
-    pagination: {
-      el: teamSwiperEl.querySelector(".swiper-pagination"),
-      clickable: true
+    autoplay: {
+      delay: 3500,
+      disableOnInteraction: false,
+      pauseOnMouseEnter: true
     },
     navigation: {
-      nextEl: teamSwiperEl.querySelector(".team-next"),
-      prevEl: teamSwiperEl.querySelector(".team-prev")
+      nextEl: document.querySelector(".team-next"),
+      prevEl: document.querySelector(".team-prev")
     },
     breakpoints: {
       680: { slidesPerView: 2 },
-      950: { slidesPerView: 3 }
+      1080: { slidesPerView: 3 }
+    }
+  });
+}
+
+// Sector swiper (what-we-do)
+const sectorSwiperEl = document.querySelector(".sector-swiper");
+if (window.Swiper && sectorSwiperEl) {
+  new Swiper(sectorSwiperEl, {
+    slidesPerView: 1,
+    spaceBetween: 28,
+    loop: true,
+    grabCursor: true,
+    autoplay: {
+      delay: 3200,
+      disableOnInteraction: false,
+      pauseOnMouseEnter: true
+    },
+    breakpoints: {
+      680: { slidesPerView: 1 },
+      950: { slidesPerView: 2 }
+    }
+  });
+}
+
+// Investor logo swiper (index)
+const investorSwiperEl = document.querySelector(".investor-swiper");
+if (window.Swiper && investorSwiperEl) {
+  new Swiper(investorSwiperEl, {
+    slidesPerView: 2,
+    spaceBetween: 14,
+    loop: true,
+    grabCursor: true,
+    autoplay: {
+      delay: 2600,
+      disableOnInteraction: false,
+      pauseOnMouseEnter: true
+    },
+    breakpoints: {
+      480: { slidesPerView: 3 },
+      760: { slidesPerView: 4 },
+      1100: { slidesPerView: 5 }
     }
   });
 }
@@ -109,49 +151,65 @@ if (teamSwiperEl) {
   const stage = teamSwiperEl.closest(".team-stage");
   const panel = stage ? stage.querySelector(".team-expanded") : null;
 
-  teamSwiperEl.querySelectorAll(".team-card").forEach((card) => {
-    const openBtn = card.querySelector(".team-open");
+  const close = () => {
+    if (stage) {
+      stage.querySelectorAll(".team-toggle, .team-more").forEach((b) => {
+        b.setAttribute("aria-expanded", "false");
+      });
+      stage.classList.remove("has-open");
+    }
+    document.body.style.overflow = "";
+    if (teamSwiper) {
+      teamSwiper.update();
+      teamSwiper.enable();
+    }
+  };
 
-    const open = () => {
-      if (!stage || !panel) return;
-      const photo = panel.querySelector(".team-expanded-photo");
-      const cardPhoto = card.querySelector(".team-photo");
-      if (photo && cardPhoto) {
-        photo.src = cardPhoto.src;
-        photo.alt = cardPhoto.alt;
-      }
-      const body = panel.querySelector(".team-expanded-body");
-      const detail = card.querySelector(".team-detail");
-      if (body && detail) {
-        body.innerHTML = "";
-        const clone = detail.cloneNode(true);
-        const insideClose = clone.querySelector(".team-close");
-        if (insideClose) insideClose.remove();
-        clone.classList.remove("team-detail");
-        clone.classList.add("team-detail-panel");
-        body.appendChild(clone);
-      }
-      if (openBtn) openBtn.setAttribute("aria-expanded", "true");
-      stage.classList.add("has-open");
-      if (teamSwiper) teamSwiper.disable();
-      if (window.matchMedia("(max-width: 680px)").matches) {
-        document.body.style.overflow = "hidden";
-      }
-    };
+  const open = (card, openBtn) => {
+    if (!stage || !panel) return;
+    const photo = panel.querySelector(".team-expanded-photo");
+    const cardPhoto = card.querySelector(".team-photo");
+    if (photo && cardPhoto) {
+      photo.src = cardPhoto.src;
+      photo.alt = cardPhoto.alt;
+    }
+    const body = panel.querySelector(".team-expanded-body");
+    const detail = card.querySelector(".team-detail");
+    if (body && detail) {
+      body.innerHTML = "";
+      const clone = detail.cloneNode(true);
+      const insideClose = clone.querySelector(".team-close");
+      if (insideClose) insideClose.remove();
+      clone.classList.remove("team-detail");
+      clone.classList.add("team-detail-panel");
+      body.appendChild(clone);
+    }
+    if (openBtn) openBtn.setAttribute("aria-expanded", "true");
+    stage.classList.add("has-open");
+    if (teamSwiper) teamSwiper.disable();
+    document.body.style.overflow = "hidden";
+  };
 
-    const close = () => {
-      if (openBtn) openBtn.setAttribute("aria-expanded", "false");
-      if (stage) stage.classList.remove("has-open");
-      document.body.style.overflow = "";
-      if (teamSwiper) {
-        teamSwiper.update();
-        teamSwiper.enable();
-      }
-    };
+  // Delegated handler: catches every "Saber mais"/toggle, including the
+  // slides Swiper loop clones (which have no direct listener).
+  stage.addEventListener("click", (e) => {
+    const openBtn = e.target.closest(".team-more, .team-toggle");
+    if (!openBtn) return;
+    const card = openBtn.closest(".team-card");
+    if (card) open(card, openBtn);
+  });
 
-    if (openBtn) openBtn.addEventListener("click", open);
-    const panelClose = panel ? panel.querySelector(".team-expanded-close") : null;
+  if (panel) {
+    const panelClose = panel.querySelector(".team-expanded-close");
     if (panelClose) panelClose.addEventListener("click", close);
+    panel.addEventListener("click", (e) => {
+      if (e.target === panel) close();
+    });
+  }
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape" && stage && stage.classList.contains("has-open")) {
+      close();
+    }
   });
 }
 

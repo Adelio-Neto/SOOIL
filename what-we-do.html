@@ -32,6 +32,12 @@
 
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
 
+    <!-- Swiper CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+      rel="stylesheet"
+    />
+
     <link rel="stylesheet" href="assets/css/style.css" />
     <link rel="stylesheet" href="assets/css/about.css" />
   </head>
@@ -43,8 +49,15 @@
       /></a>
 
       <nav class="desktop-nav" aria-label="Primary navigation">
-        <a href="about.html">About Us</a>
-        <a href="what-we-do.html">What We Do</a>
+        <a href="index.html">Home</a>
+        <div class="nav-item active">
+          <a href="#0">About</a>
+          <div class="dropdown">
+            <a href="about.html">About Us</a>
+            <a href="history.html">Our history</a>
+            <a href="what-we-do.html">What we do</a>
+          </div>
+        </div>
         <a href="sustainability.html">Sustainability</a>
         <a href="investors.html">Investors</a>
         <a href="news.html">News &amp; Media</a>
@@ -72,8 +85,9 @@
       </div>
 
       <nav class="mobile-nav" id="mobileNav">
+        <a href="index.html">Home</a>
         <a href="about.html">About Us</a>
-        <a href="what-we-do.html">What We Do</a>
+        <a href="history.html">Our history</a>
         <a href="sustainability.html">Sustainability</a>
         <a href="investors.html">Investors</a>
         <a href="news.html">News &amp; Media</a>
@@ -83,7 +97,7 @@
 
     <main>
       <!-- PAGE HERO -->
-      <section class="page-hero">
+      <section class="page-hero page-hero--compact">
         <div class="page-hero-bg">
           <img
             src="assets/img/images/services/1.jpg"
@@ -103,9 +117,10 @@
         </div>
       </section>
 
-      <!-- INTRO -->
-      <section class="intro section container">
-        <div class="intro-copy">
+      <!-- STICKY INTRO -->
+      <section class="intro-layout container">
+        <div class="intro-layout__sticky">
+          <div class="intro-copy">
           <p class="eyebrow">Our expertise</p>
           <h2>
             We combine banking expertise, private equity and a deep knowledge of
@@ -115,21 +130,22 @@
             From opportunity analysis to structured capital, we support each
             stage of producing oil fields in the Angolan Oil &amp; Gas industry.
           </p>
-          <a class="text-link" href="about.html"
+          <a class="text-link btn-pill" href="about.html#team"
             >Meet the team <span>→</span></a
           >
         </div>
+        </div>
 
+        <div class="intro-layout__scroll">
         <div class="feature-photo rounded" data-aos="fade-up">
           <img
             src="assets/img/images/services/service-single3.jpg"
             alt="Energy professionals reviewing a project"
           />
         </div>
-      </section>
 
       <!-- BENTO SERVICES -->
-      <section class="container bento-grid about-bento">
+      <section class="bento-grid about-bento">
         <article class="bento-card card-wide about-card card-dark" data-aos="fade-up">
           <div class="card-content">
             <p class="eyebrow light">Private Equity</p>
@@ -178,24 +194,6 @@
         </article>
       </section>
 
-      <!-- STATS -->
-      <section class="stats-section">
-        <div class="container">
-          <h2>At a glance</h2>
-          <div class="stats-grid">
-            <div class="stat-card" data-aos="fade-up">
-              <strong>30+</strong><span>Years of business experience</span>
-            </div>
-            <div class="stat-card" data-aos="fade-up">
-              <strong>26</strong><span>Years of banking experience</span>
-            </div>
-            <div class="stat-card" data-aos="fade-up">
-              <strong>1</strong><span>Focus: Angola's Oil &amp; Gas</span>
-            </div>
-          </div>
-        </div>
-      </section>
-
       <!-- SECTOR BOX -->
       <section class="section container">
         <div class="split-heading" data-aos="fade-up">
@@ -203,39 +201,46 @@
             <p class="eyebrow">Oil &amp; Gas value chain</p>
             <h2>Creating value at every stage of the production chain</h2>
           </div>
-          <a class="circle-link" href="about.html#contact"
-            ><span>Talk to us</span><b>↗</b></a
-          >
         </div>
 
-        <div class="media-grid three">
-          <article class="media-card" data-aos="fade-up">
-            <img
-              src="assets/img/images/services/7.jpg"
-              alt=""
-            />
-            <h4>Exploration</h4>
-            <p>Financing the discovery and appraisal of new fields.</p>
-            <a href="about.html">Learn more →</a>
-          </article>
-          <article class="media-card" data-aos="fade-up">
-            <img
-              src="assets/img/images/services/14.jpg"
-              alt=""
-            />
-            <h4>Development</h4>
-            <p>Structured capital for bringing fields into production.</p>
-            <a href="about.html">Learn more →</a>
-          </article>
-          <article class="media-card" data-aos="fade-up">
-            <img
-              src="assets/img/images/services/1.jpg"
-              alt=""
-            />
-            <h4>Production</h4>
-            <p>Value creation through assets in full operation.</p>
-            <a href="about.html">Learn more →</a>
-          </article>
+        <div class="swiper sector-swiper">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide">
+              <article class="media-card">
+                <img
+                  src="assets/img/images/services/7.jpg"
+                  alt=""
+                />
+                <h4>Exploration</h4>
+                <p>Financing the discovery and appraisal of new fields.</p>
+                <a href="about.html">Learn more →</a>
+              </article>
+            </div>
+            <div class="swiper-slide">
+              <article class="media-card">
+                <img
+                  src="assets/img/images/services/14.jpg"
+                  alt=""
+                />
+                <h4>Development</h4>
+                <p>Structured capital for bringing fields into production.</p>
+                <a href="about.html">Learn more →</a>
+              </article>
+            </div>
+            <div class="swiper-slide">
+              <article class="media-card">
+                <img
+                  src="assets/img/images/services/1.jpg"
+                  alt=""
+                />
+                <h4>Production</h4>
+                <p>Value creation through assets in full operation.</p>
+                <a href="about.html">Learn more →</a>
+              </article>
+            </div>
+          </div>
+        </div>
+      </section>
         </div>
       </section>
     </main>
@@ -416,6 +421,9 @@
     </div>
 
     <button class="back-top" id="backTop" aria-label="Back to top">↑</button>
+
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
     <script src="assets/js/script.js"></script>
     <script src="assets/js/i18n.js"></script>
