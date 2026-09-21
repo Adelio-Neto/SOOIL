@@ -850,6 +850,7 @@ main {
   color: var(--muted);
   margin-bottom: 10px;
 }
+
 .iconGrid--item-content .cta {
   display: none;
   font-size: 12px;
