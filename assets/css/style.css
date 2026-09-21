@@ -2478,6 +2478,8 @@ main {
   grid-template-columns: repeat(2, 1fr);
   gap: 16px;
   align-items: stretch;
+  max-width: 720px;
+  margin-left: auto;
 }
 .sector-card {
   display: flex;
@@ -2537,9 +2539,12 @@ main {
   border-color: #c49531;
   color: #fff;
 }
-@media (max-width: 420px) {
+@media (max-width: 540px) {
   .sector-grid {
+    max-width: 100%;
+    margin-left: 0;
     grid-template-columns: 1fr;
   }
 }
+
 
