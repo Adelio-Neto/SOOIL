@@ -1615,8 +1615,8 @@ main {
   line-height: 1;
 }
 .footer--socialIcon:hover {
-  background: var(--blue);
-  border-color: var(--blue);
+  background: #d1a648;
+  border-color: #d1a648;
   color: #fff;
 }
 
@@ -2685,7 +2685,7 @@ main {
 }
 
 .newsletter-form button:hover {
-  background: #327638;
+  background: #d1a648;
 }
 
 .newsletter-form button:active {
