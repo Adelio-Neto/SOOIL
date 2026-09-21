@@ -447,6 +447,14 @@ const enToPt = {
   "Ethics and transparency": "Ética e transparência",
   "Solid governance, business ethics and alignment with international best practices.":
     "Governação sólida, ética empresarial e alinhamento com as melhores práticas internacionais.",
+  "New strategies to reduce emissions across our value chain, investing in cleaner technologies, renewable energy and energy efficiency, while supporting Angola's transition to a more sustainable and competitive energy mix for the long term.":
+    "Novas estratégias para reduzir emissões em toda a nossa cadeia de valor, investindo em tecnologias mais limpas, energias renováveis e eficiência energética, apoiando a transição de Angola para uma matriz energética mais sustentável e competitiva a longo prazo.",
+  "Safety, training and career development for our teams, plus social investment in education, health and the well-being of the communities where we operate every day, building trust and shared growth.":
+    "Segurança, formação e desenvolvimento de carreira para as nossas equipas, além de investimento social em educação, saúde e bem-estar das comunidades onde operamos todos os dias, construindo confiança e crescimento partilhado.",
+  "Initiatives to preserve and restore natural ecosystems, protecting local biodiversity, water resources and the landscape in the areas surrounding our operations, for present and future generations.":
+    "Iniciativas para preservar e restaurar os ecossistemas naturais, protegendo a biodiversidade local, os recursos hídricos e a paisagem nas áreas envolventes das nossas operações, para as gerações presentes e futuras.",
+  "Solid governance, business ethics and transparency, aligned with international best practices and built on strategic partnerships that protect long-term shared value for shareholders, communities and the environment.":
+    "Governação sólida, ética empresarial e transparência, alinhadas com as melhores práticas internacionais e construídas sobre parcerias estratégicas que protegem o valor partilhado de longo prazo para acionistas, comunidades e ambiente.",
   "Sustainable value means generating returns for shareholders while improving the quality of life of future generations.":
     "Valor sustentável significa gerar retorno para os acionistas enquanto melhora a qualidade de vida das futuras gerações.",
   "Our responsibility": "A nossa responsabilidade",
@@ -607,6 +615,15 @@ function translateWith(map, doc) {
 
   doc.documentElement.lang = currentLang === "pt" ? "pt" : "en";
 }
+
+function translateText(text) {
+  if (typeof text !== "string") return text;
+  const map = currentLang === "pt" ? enToPt : ptToEn;
+  const normalized = text.replace(/\s+/g, " ").trim();
+  return normalized && map[normalized] ? map[normalized] : text;
+}
+
+window.sooilI18n = { translateText, currentLang: () => currentLang };
 
 function setLanguage(lang) {
   if (lang !== "pt") lang = "en";

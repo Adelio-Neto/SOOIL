@@ -1,4 +1,4 @@
-// =========================================================
+﻿// =========================================================
 // PAGE INTERACTIONS
 // =========================================================
 
@@ -114,18 +114,75 @@ if (window.Swiper && sectorSwiperEl) {
     spaceBetween: 28,
     loop: true,
     grabCursor: true,
-    autoplay: {
-      delay: 3200,
-      disableOnInteraction: false,
-      pauseOnMouseEnter: true
-    },
     breakpoints: {
-      680: { slidesPerView: 1 },
-      950: { slidesPerView: 2 }
+      680: { slidesPerView: 2 },
+      1120: { slidesPerView: 3 }
     }
   });
 }
 
+// Impact header — título/descrição acima do slide, sincroniza com o card escolhido
+const impactHeaderEl = document.querySelector(".impact-header");
+const impactTitle = document.getElementById("impactTitle");
+const impactDesc = document.getElementById("impactDesc");
+if (impactHeaderEl && sectorSwiperEl && window.Swiper) {
+  const swiper = sectorSwiperEl.swiper;
+  const descs = Array.from(
+    sectorSwiperEl.querySelectorAll(".swiper-slide .media-card[data-detail]")
+  ).map((card) => ({
+    title: card.querySelector("h2").textContent.trim(),
+    desc: card.dataset.detail.trim()
+  }));
+
+  const render = (index) => {
+    const data = descs[index % descs.length];
+    if (!data) return;
+    const i18n = window.sooilI18n;
+    impactTitle.textContent = i18n ? i18n.translateText(data.title) : data.title;
+    impactDesc.textContent = i18n ? i18n.translateText(data.desc) : data.desc;
+  };
+
+  const renderIndex = (index) => {
+    const data = descs[index % descs.length];
+    if (!data) return;
+    impactTitle.textContent = window.sooilI18n ? window.sooilI18n.translateText(data.title) : data.title;
+    impactDesc.textContent = window.sooilI18n ? window.sooilI18n.translateText(data.desc) : data.desc;
+  };
+
+  const select = (index) => {
+    swiper.slideToLoop(index);
+    render(index);
+  };
+
+  const cards = Array.from(
+    sectorSwiperEl.querySelectorAll(".swiper-slide .media-card")
+  );
+  cards.forEach((card, i) => {
+    const link = card.querySelector("a.lang-btn, a");
+    if (!link) return;
+    link.addEventListener("click", (e) => {
+      e.preventDefault();
+      select(i);
+      impactHeaderEl.scrollIntoView({ behavior: "smooth", block: "start" });
+    });
+  });
+
+  if (swiper.on) {
+    swiper.on("slideChange", () => render(swiper.realIndex));
+  }
+  render(0);
+
+  const pillars = { climate: 0, people: 1, biodiversity: 2, governance: 3 };
+  const params = new URLSearchParams(window.location.search);
+  const target = pillars[params.get("pillar")];
+  if (typeof target === "number" && target >= 0) {
+    select(target);
+    const section = sectorSwiperEl.closest("section");
+    if (section) {
+      requestAnimationFrame(() => section.scrollIntoView({ behavior: "smooth", block: "start" }));
+    }
+  }
+}
 // Investor logo swiper (index)
 const investorSwiperEl = document.querySelector(".investor-swiper");
 if (window.Swiper && investorSwiperEl) {
@@ -316,7 +373,7 @@ if (policyModal) {
 }
 
 // =========================================================
-// CANDIDATURA ESPONTÂNEA — FORM (mailto)
+// CANDIDATURA ESPONTÃ‚NEA â€” FORM (mailto)
 // =========================================================
 const candidaturaForm = document.getElementById("candidaturaForm");
 if (candidaturaForm) {
@@ -331,15 +388,15 @@ if (candidaturaForm) {
 
     if (!nome || !bi || !dataNascimento || !pais) return;
 
-    const subject = encodeURIComponent("Candidatura Espontânea — " + nome);
+    const subject = encodeURIComponent("Candidatura EspontÃ¢nea â€” " + nome);
     const body = encodeURIComponent(
       [
-        "Candidatura Espontânea",
+        "Candidatura EspontÃ¢nea",
         "",
         "Nome completo: " + nome,
         "Bilhete de Identidade: " + bi,
         "Data de nascimento: " + dataNascimento,
-        "País de nacionalidade: " + pais
+        "PaÃ­s de nacionalidade: " + pais
       ].join("\n")
     );
 
