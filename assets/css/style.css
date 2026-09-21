@@ -229,16 +229,7 @@ main {
     color 0.18s ease,
     padding-left 0.18s ease;
 }
-.dropdown a::after {
-  content: "→";
-  color: #c49531;
-  font-size: 13px;
-  opacity: 0;
-  transform: translateX(-5px);
-  transition:
-    opacity 0.18s ease,
-    transform 0.18s ease;
-}
+
 .dropdown a:hover {
   background: linear-gradient(90deg, rgba(196, 149, 49, 0.12), transparent);
   color: #c49531;
