@@ -1983,6 +1983,7 @@ main {
   :root {
     --space: 46px;
   }
+
   .container {
     width: min(calc(100% - 28px), var(--container));
   }
@@ -1990,6 +1991,7 @@ main {
   .intro {
     grid-template-columns: 1fr;
   }
+
   .feature-photo {
     min-height: 280px;
   }
@@ -1998,12 +2000,15 @@ main {
     grid-template-columns: 1fr 1fr;
     gap: 9px;
   }
+
   .bento-card {
     min-height: 260px;
   }
+
   .card-content {
     padding: 12px;
   }
+
   .card-content h3 {
     font-size: 16px;
   }
@@ -2013,16 +2018,20 @@ main {
     grid-template-columns: repeat(2, 1fr);
     gap: 14px;
   }
+
   .media-grid.four,
   #sustentabilidade .media-grid.three {
     grid-template-columns: 1fr;
   }
+
   .media-card img {
     height: 140px;
   }
+
   #sustentabilidade .media-card img {
     height: 180px;
   }
+
   .media-card h4 {
     font-size: 15px;
   }
@@ -2030,10 +2039,12 @@ main {
   .stats-grid {
     gap: 10px;
   }
+
   .stat-card {
     min-height: 110px;
     padding: 10px;
   }
+
   .stat-card span {
     font-size: 10px;
   }
@@ -2042,32 +2053,43 @@ main {
     align-items: flex-start;
     flex-direction: column;
   }
+
   .split-heading .circle-link {
     margin-top: -10px;
   }
 
+  /* NEWS — MOBILE */
+
   .news-grid {
+    display: grid;
     grid-template-columns: 1fr;
+    width: 100%;
+    gap: 20px;
   }
+
   .news-card {
-    min-height: 220px;
+    width: 100%;
+    min-width: 0;
+    min-height: 180px;
   }
+
   .news-card:has(img.news-cover) {
     min-height: 300px;
   }
-  .news-card {
-    min-height: 180px;
-  }
+
   .video-box {
     height: 260px;
   }
+
   .team-card {
     min-height: 300px;
   }
+
   .team-expanded {
     grid-template-columns: 1fr;
     grid-template-rows: auto 1fr;
   }
+
   .team-stage.has-open .team-expanded {
     position: fixed;
     inset: 0;
@@ -2079,18 +2101,22 @@ main {
     overflow-y: auto;
     background: #0c1216;
   }
+
   .team-expanded-photo-wrap {
     position: sticky;
     top: 0;
     min-height: 300px;
     z-index: 1;
   }
+
   .team-expanded-photo {
     height: 300px;
   }
+
   .team-expanded-body {
     padding: 24px 20px 48px;
   }
+
   .team-expanded-close {
     position: fixed;
     top: 14px;
@@ -2105,10 +2131,12 @@ main {
     flex-direction: column;
     align-items: flex-start;
   }
+
   .footer--links,
   .footer--socialMedia {
     width: 100%;
   }
+
   .footer--privacy {
     margin-left: 0;
   }

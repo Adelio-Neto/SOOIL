@@ -48,6 +48,26 @@
   padding: 90px 0 40px;
 }
 
+/* Sustainability pillar selector */
+.sustainability-pillar {
+  cursor: pointer;
+  outline: 1px solid transparent;
+  transition:
+    background 0.25s ease,
+    outline-color 0.25s ease,
+    transform 0.25s ease;
+}
+.sustainability-pillar:hover,
+.sustainability-pillar:focus-visible,
+.sustainability-pillar.is-active {
+  background: rgba(196, 149, 49, 0.09);
+  outline-color: rgba(196, 149, 49, 0.75);
+}
+.sustainability-pillar:hover,
+.sustainability-pillar:focus-visible {
+  transform: translateY(-3px);
+}
+
 /* Layout fixo — texto esquerda fixo, conteúdo direito desliza */
 .intro-layout {
   display: grid;
@@ -613,6 +633,13 @@
 .news-card.featured {
   grid-column: span 2;
 }
+
+/* Na página de notícias todos os cards têm a mesma largura: quatro por linha
+   no desktop e uma coluna no breakpoint mobile definido em style.css. */
+#newsPageGrid .news-card.featured {
+  grid-column: auto;
+}
+
 .news-card.featured h4 {
   font-size: 22px;
 }
@@ -706,6 +733,26 @@
   }
   .article-aside {
     position: static;
+  }
+}
+
+/* Apenas os heróis das páginas internas; o hero do index usa .hero. */
+@media (max-width: 768px) {
+  .page-hero--compact {
+    height: 210px;
+    min-height: 210px;
+    padding: 56px 0 16px;
+  }
+  .page-hero h1 {
+    font-size: clamp(28px, 8vw, 34px);
+    line-height: 1.1;
+    margin: 8px 0 14px;
+  }
+  .page-hero .eyebrow {
+    font-size: 10px;
+  }
+  .page-hero .circle-link {
+    font-size: 12px;
   }
 }
 

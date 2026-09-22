@@ -119,78 +119,122 @@
         </div>
       </section>
 
-      <!-- IMPACT SWIPER -->
-      <section class="section container">
-        <div class="impact-header" data-aos="fade-up">
-          <div class="impact-header__text">
+      <!-- STICKY INTRO + SUSTAINABILITY PILLARS -->
+      <section class="intro-layout container">
+        <div class="intro-layout__sticky">
+          <div class="intro-copy">
             <p class="eyebrow">Our responsibility</p>
-            <h2 id="impactTitle">Climate and energy</h2>
-            <p class="impact-header__desc" id="impactDesc">
-              New strategies to reduce emissions and support the transition to a
-              cleaner energy mix.
+            <h2 id="sustainabilityTitle">Supporting Angola's cleaner energy transition</h2>
+            <p class="description" id="sustainabilityDescription">
+              We integrate responsible practices into our investments and
+              operations, supporting a more sustainable energy future for Angola.
             </p>
           </div>
         </div>
 
-        <div class="swiper sector-swiper">
-          <div class="swiper-wrapper">
-            <div class="swiper-slide">
-              <article
-                class="media-card"
-                data-detail="New strategies to reduce emissions across our value chain, investing in cleaner technologies, renewable energy, energy efficiency and carbon offset projects. Our goal is to support Angola's transition to a more sustainable, secure and competitive energy mix for the long term, while creating value for shareholders and society."
-              >
-                <img src="assets/img/images/gallery/full/4.jpg" alt="" />
-                <h2>Climate and energy</h2>
-                <p>
-                  New strategies to reduce emissions and support the transition
-                  to a cleaner energy mix.
-                </p>
-                <a href="?pillar=climate">Learn more →</a>
-              </article>
-            </div>
-            <div class="swiper-slide">
-              <article
-                class="media-card"
-                data-detail="Safety, training and career development for our teams, plus social investment in education, health and the well-being of the communities where we operate every day, building trust and shared growth."
-              >
-                <img src="assets/img/images/gallery/full/2.jpg" alt="" />
-                <h2>People and safety</h2>
-                <p>
-                  Safety, training and development for our teams and the
-                  communities where we operate.
-                </p>
-                <a href="?pillar=people">Learn more →</a>
-              </article>
-            </div>
-            <div class="swiper-slide">
-              <article
-                class="media-card"
-                data-detail="Initiatives to preserve and restore natural ecosystems, protecting local biodiversity, water resources and the landscape in the areas surrounding our operations, for present and future generations."
-              >
-                <img src="assets/img/images/gallery/full/01.jpg" alt="" />
-                <h2>Biodiversity initiatives</h2>
-                <p>
-                  Initiatives to preserve and restore ecosystems in the areas
-                  surrounding our projects.
-                </p>
-                <a href="about.html">Learn more →</a>
-              </article>
-            </div>
-            <div class="swiper-slide">
-              <article
-                class="media-card"
-                data-detail="Solid governance, business ethics and transparency, aligned with international best practices and built on strategic partnerships that protect long-term shared value for shareholders, communities and the environment."
-              >
-                <img src="assets/img/images/gallery/full/3.jpg" alt="" />
-                <h2>Responsible governance</h2>
-                <p>
-                  Solid governance, business ethics and alignment with
-                  international best practices.
-                </p>
-                <a href="about.html">Learn more →</a>
-              </article>
-            </div>
+        <div class="intro-layout__scroll">
+          <div class="feature-photo rounded" data-aos="fade-up">
+            <img
+              id="sustainabilityFeatureImage"
+              src="assets/img/images/gallery/full/4.jpg"
+              alt="Sustainable energy infrastructure"
+            />
           </div>
+
+          <section class="section container">
+            <div class="split-heading" data-aos="fade-up">
+              <div>
+                <p class="eyebrow">Sustainability pillars</p>
+                <h2>Our commitments in action</h2>
+              </div>
+            </div>
+
+            <div class="sector-grid">
+              <article
+                class="sector-card sustainability-pillar is-active"
+                data-aos="fade-up"
+                data-title="Supporting Angola's cleaner energy transition"
+                data-description="We invest in cleaner technologies, renewable energy, energy efficiency and carbon-offset projects across our value chain. These initiatives help reduce emissions while supporting a secure, competitive and sustainable energy mix for Angola."
+                data-image="assets/img/images/gallery/full/4.jpg"
+                data-image-alt="Climate and energy"
+                tabindex="0"
+                aria-current="true"
+              >
+                <img src="assets/img/images/gallery/full/4.jpg" alt="Climate and energy" />
+                <h4>Climate and energy</h4>
+                <p>Reducing emissions and supporting a cleaner energy mix.</p>
+                <button class="sector-more" type="button" data-bs-toggle="modal" data-bs-target="#sectorModal">Learn more</button>
+                <div class="sector-detail">
+                  <p class="eyebrow light">Climate and energy</p>
+                  <h3>Supporting Angola's cleaner energy transition</h3>
+                  <p>We invest in cleaner technologies, renewable energy, energy efficiency and carbon-offset projects across our value chain.</p>
+                </div>
+              </article>
+
+              <article
+                class="sector-card sustainability-pillar"
+                data-aos="fade-up"
+                data-title="Helping people and communities thrive"
+                data-description="We promote safety, career development and social investment in education, health and well-being where we operate. By working closely with our teams and local communities, we create opportunities for shared progress and long-term resilience."
+                data-image="assets/img/images/gallery/full/2.jpg"
+                data-image-alt="People and safety"
+                tabindex="0"
+                aria-current="false"
+              >
+                <img src="assets/img/images/gallery/full/2.jpg" alt="People and safety" />
+                <h4>People and safety</h4>
+                <p>Safety, training and development for our teams and communities.</p>
+                <button class="sector-more" type="button" data-bs-toggle="modal" data-bs-target="#sectorModal">Learn more</button>
+                <div class="sector-detail">
+                  <p class="eyebrow light">People and safety</p>
+                  <h3>Helping people and communities thrive</h3>
+                  <p>We promote safety, career development and social investment in education, health and well-being where we operate.</p>
+                </div>
+              </article>
+
+              <article
+                class="sector-card sustainability-pillar"
+                data-aos="fade-up"
+                data-title="Preserving ecosystems for future generations"
+                data-description="Our initiatives protect biodiversity, water resources and landscapes in the areas surrounding our operations. We work to preserve and restore natural ecosystems so that the benefits of our projects remain compatible with future generations."
+                data-image="assets/img/images/gallery/full/01.jpg"
+                data-image-alt="Biodiversity initiatives"
+                tabindex="0"
+                aria-current="false"
+              >
+                <img src="assets/img/images/gallery/full/01.jpg" alt="Biodiversity initiatives" />
+                <h4>Biodiversity initiatives</h4>
+                <p>Protecting ecosystems and natural resources around our projects.</p>
+                <button class="sector-more" type="button" data-bs-toggle="modal" data-bs-target="#sectorModal">Learn more</button>
+                <div class="sector-detail">
+                  <p class="eyebrow light">Biodiversity initiatives</p>
+                  <h3>Preserving ecosystems for future generations</h3>
+                  <p>Our initiatives protect biodiversity, water resources and landscapes in the areas surrounding our operations.</p>
+                </div>
+              </article>
+
+              <article
+                class="sector-card sustainability-pillar"
+                data-aos="fade-up"
+                data-title="Governance that protects shared value"
+                data-description="We follow sound governance and business-ethics practices aligned with international standards and long-term partnerships. Transparency, accountability and responsible decision-making guide how we protect value for shareholders, communities and the environment."
+                data-image="assets/img/images/gallery/full/3.jpg"
+                data-image-alt="Responsible governance"
+                tabindex="0"
+                aria-current="false"
+              >
+                <img src="assets/img/images/gallery/full/3.jpg" alt="Responsible governance" />
+                <h4>Responsible governance</h4>
+                <p>Ethics, transparency and partnerships built for long-term value.</p>
+                <button class="sector-more" type="button" data-bs-toggle="modal" data-bs-target="#sectorModal">Learn more</button>
+                <div class="sector-detail">
+                  <p class="eyebrow light">Responsible governance</p>
+                  <h3>Governance that protects shared value</h3>
+                  <p>We follow sound governance and business-ethics practices aligned with international standards and long-term partnerships.</p>
+                </div>
+              </article>
+            </div>
+          </section>
         </div>
       </section>
     </main>
@@ -229,10 +273,6 @@
               Receba novidades, ofertas e conteúdos exclusivos diretamente no
               seu e-mail.
             </p>
-
-            <a href="#" class="newsletter-card__link">
-              Política de privacidade
-            </a>
           </div>
 
           <form class="newsletter-card__form">
@@ -420,11 +460,37 @@
 
     <button class="back-top" id="backTop" aria-label="Back to top">↑</button>
 
+    <!-- SUSTAINABILITY PILLAR MODAL -->
+    <div
+      class="modal fade team-modal"
+      id="sectorModal"
+      tabindex="-1"
+      role="dialog"
+      aria-modal="true"
+      aria-label="Sustainability pillar"
+    >
+      <div class="modal-dialog modal-dialog-centered team-modal-dialog">
+        <div class="modal-content team-modal-content">
+          <button
+            type="button"
+            class="btn-close team-expanded-close"
+            data-bs-dismiss="modal"
+            aria-label="Close"
+          ></button>
+          <figure class="team-expanded-photo-wrap">
+            <img class="team-expanded-photo" alt="" />
+          </figure>
+          <div class="team-expanded-body"></div>
+        </div>
+      </div>
+    </div>
+
     <!-- Swiper JS -->
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
     <script src="assets/js/script.js"></script>
     <script src="assets/js/i18n.js"></script>
+    <script src="assets/js/sustainability.js"></script>
 
     <script src="assets/js/hero-slider.js"></script>
     <script src="assets/js/header-scroll.js"></script>
