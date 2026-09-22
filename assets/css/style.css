@@ -1061,38 +1061,46 @@ main {
 /* =========================================================
    7. SECTION HEADERS + NEWS
 ========================================================= */
-.split-heading {
-  display: flex;
-  justify-content: space-between;
-  align-items: end;
-  gap: 30px;
-  margin-bottom: 30px;
-}
-.split-heading h2 {
-  margin-bottom: 0;
-  max-width: 700px;
-}
-.description {
-  max-width: 520px;
-  color: var(--muted);
-}
-
 .news-section {
   padding: var(--space) 0;
   background: #eef0ee;
 }
-.news-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 12px;
+
+/* O container controla a largura */
+.news-section .container {
+  width: 100%;
+  max-width: 1200px; /* usa aqui o mesmo valor do teu container principal */
+  margin: 0 auto;
+  padding-left: 20px;
+  padding-right: 20px;
+  box-sizing: border-box;
 }
+
+/* O grid ocupa 100% do container */
+.news-grid {
+  width: 100%;
+  max-width: none;
+
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 20px;
+
+  box-sizing: border-box;
+}
+
 .news-card {
+  min-width: 0;
   min-height: 250px;
+
   border-radius: var(--radius);
   background: white;
+
   padding: 18px;
+
   display: flex;
   flex-direction: column;
+
+  box-sizing: border-box;
 }
 .news-card h3 {
   font-size: 19px;
@@ -2203,8 +2211,17 @@ main {
    TEAM — LIFE AT TURNER STYLE
    (compact cards + brand info block + "Saber mais")
 ========================================================= */
+.split-heading {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 24px;
+}
 .team-head {
-  align-items: end;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
 }
 .team-controls {
   display: flex;
@@ -2424,7 +2441,14 @@ main {
 
 @media (max-width: 700px) {
   .team-head {
-    align-items: flex-start;
+    align-items: center;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 12px;
+    flex-wrap: wrap;
+  }
+  .team-controls {
+    margin-left: auto;
   }
   .team-controls .swiper-btn {
     width: 42px;
@@ -2548,229 +2572,136 @@ main {
   }
 }
 
-.newsletter-cta {
-  width: 100%;
-  box-sizing: border-box;
+.newsletter.section {
+  --brand-green: #c49531;
+  padding-top: 60px;
+  padding-bottom: 20px;
+}
 
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-
-  gap: 40px;
-
-  padding: 32px 40px;
-
+.newsletter-card {
+  font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
   background: #fff;
-  border: 1px solid #eeeeee;
-  border-radius: 8px;
-
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
-}
-
-/* LADO ESQUERDO */
-
-.newsletter-content {
+  border-radius: 4px;
+  padding: 24px 32px;
   display: flex;
   align-items: center;
-  gap: 28px;
-
-  min-width: 0;
+  gap: 24px;
 }
 
-.newsletter-icon {
-  width: 48px;
+.newsletter-card__icon {
+  flex: 0 0 auto;
+  width: 64px;
   height: 48px;
-
-  flex: 0 0 48px;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  font-size: 38px;
-  color: #d1a648;
 }
 
-.newsletter-icon span {
-  font-size: 68px;
-  color: #d1a648;
+.newsletter-card__icon svg {
+  width: 100%;
+  height: 100%;
 }
 
-.newsletter-text {
-  min-width: 0;
+.newsletter-card__text {
+  flex: 1 1 auto;
+  min-width: 220px;
 }
 
-.newsletter-text h2 {
-  margin: 0 0 8px;
-
-  font-size: 22px;
-  line-height: 1.3;
+.newsletter-card__title {
+  margin: 0 0 4px;
+  font-size: 20px;
   font-weight: 600;
-
-  color: #171717;
+  color: #1a1a1a;
+  line-height: 1.3;
 }
 
-.privacy-link {
-  font-size: 16px;
-  color: #d1a648;
-
+.newsletter-card__link {
+  font-size: 14px;
+  color: var(--brand-green);
   text-decoration: none;
 }
 
-.privacy-link:hover {
+.newsletter-card__link:hover {
+  color: #c49531;
   text-decoration: underline;
 }
 
-/* FORMULÁRIO */
-
-.newsletter-form {
+.newsletter-card__form {
+  flex: 0 0 auto;
   display: flex;
   align-items: center;
-
-  gap: 14px;
-
-  flex: 0 0 auto;
+  gap: 12px;
 }
 
-.newsletter-form input {
-  width: 310px;
-  height: 56px;
-
-  box-sizing: border-box;
-
-  padding: 0 20px;
-
-  border: 1px solid #dedede;
-  border-radius: 30px;
-
+.newsletter-card__input {
+  width: 260px;
+  padding: 12px 16px;
+  border: 1px solid #d7dbe0;
+  border-radius: 24px;
+  font-size: 14px;
+  color: #1a1a1a;
   outline: none;
+  transition: border-color 0.15s ease;
+}
 
-  font-size: 16px;
+.newsletter-card__input::placeholder {
+  color: #8a94a3;
   font-style: italic;
-
-  color: #333;
-
-  background: #fff;
 }
 
-.newsletter-form input::placeholder {
-  color: #9b9b9b;
+.newsletter-card__input:focus {
+  border-color: var(--brand-green);
 }
 
-.newsletter-form input:focus {
-  border-color: #d1a648;
-}
-
-.newsletter-form button {
-  height: 56px;
-
-  padding: 0 30px;
-
-  border: none;
-  border-radius: 32px;
-
-  background: #d1a648;
+.newsletter-card__button {
+  background: var(--brand-green);
   color: #fff;
-
-  font-size: 16px;
-  font-weight: 600;
-
-  cursor: pointer;
-
+  border: none;
+  border-radius: 24px;
+  padding: 13px 24px;
+  font-size: 14px;
+  font-weight: 700;
   white-space: nowrap;
-
-  transition:
-    background 0.2s ease,
-    transform 0.2s ease;
+  cursor: pointer;
+  transition: background 0.15s ease;
 }
 
-.newsletter-form button:hover {
-  background: #d1a648;
+.newsletter-card__button:hover {
+  background: #c49531;
 }
 
-.newsletter-form button:active {
-  transform: translateY(1px);
-}
-
-/* =========================
-   TABLET
-========================= */
-
-@media (max-width: 1000px) {
-  .newsletter-cta {
-    padding: 28px;
-    gap: 25px;
+@media (max-width: 900px) {
+  .newsletter-card {
+    flex-wrap: wrap;
+    justify-content: center;
+    text-align: center;
+    padding: 24px;
   }
 
-  .newsletter-content {
-    gap: 18px;
+  .newsletter-card__text {
+    text-align: center;
+    min-width: 100%;
   }
 
-  .newsletter-text h2 {
-    font-size: 19px;
+  .newsletter-card__form {
+    width: 100%;
+    flex-wrap: wrap;
+    justify-content: center;
   }
 
-  .newsletter-form input {
-    width: 240px;
+  .newsletter-card__input {
+    width: 100%;
   }
 
-  .newsletter-form button {
-    padding: 0 22px;
+  .newsletter-card__button {
+    width: 100%;
   }
 }
 
-/* =========================
-   MOBILE
-========================= */
-
-@media (max-width: 768px) {
-  .newsletter-cta {
-    flex-direction: column;
-    align-items: stretch;
-
-    gap: 24px;
-
-    padding: 25px 20px;
-  }
-
-  .newsletter-content {
-    align-items: flex-start;
+@media (max-width: 480px) {
+  .newsletter-card {
+    padding: 20px 16px;
     gap: 16px;
   }
 
-  .newsletter-icon {
-    width: 42px;
-    height: 42px;
-    flex-basis: 42px;
-
-    font-size: 32px;
-  }
-
-  .newsletter-text h2 {
+  .newsletter-card__title {
     font-size: 18px;
-    line-height: 1.4;
-  }
-
-  .privacy-link {
-    font-size: 14px;
-  }
-
-  .newsletter-form {
-    width: 100%;
-
-    flex-direction: column;
-    align-items: stretch;
-
-    gap: 10px;
-  }
-
-  .newsletter-form input {
-    width: 100%;
-    height: 52px;
-  }
-
-  .newsletter-form button {
-    width: 100%;
-    height: 52px;
   }
 }

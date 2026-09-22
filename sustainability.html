@@ -195,31 +195,61 @@
       </section>
     </main>
 
-    <section class="newsletter-cta">
-      <div class="newsletter-content">
-        <div class="newsletter-icon">
-          <span>✉</span>
-        </div>
+    <section id="newsletter" class="newsletter section" data-aos="fade-up">
+      <div class="container">
+        <div class="newsletter-card">
+          <span class="newsletter-card__icon" aria-hidden="true">
+            <svg
+              viewBox="0 0 64 48"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <circle cx="50" cy="8" r="5" fill="#c49531" />
+              <path
+                d="M4 14a4 4 0 014-4h48a4 4 0 014 4v26a4 4 0 01-4 4H8a4 4 0 01-4-4V14z"
+                fill="#eef1f5"
+              />
+              <path
+                d="M4 14l28 18 28-18"
+                stroke="#c49531"
+                stroke-width="2.5"
+                fill="none"
+              />
+              <path
+                d="M4 40l18-14M60 40L42 26"
+                stroke="#c49531"
+                stroke-width="2.5"
+              />
+              <path d="M22 20l16-8 8 16-24-8z" fill="#c49531" />
+            </svg>
+          </span>
 
-        <div class="newsletter-text">
-          <h4>Fique por dentro das novidades</h4>
-          <p>
-            Receba novidades, ofertas e conteúdos exclusivos diretamente no seu
-            e-mail.
-          </p>
+          <div class="newsletter-card__text">
+            <p class="newsletter-card__title">
+              Receba novidades, ofertas e conteúdos exclusivos diretamente no
+              seu e-mail.
+            </p>
+
+            <a href="#" class="newsletter-card__link">
+              Política de privacidade
+            </a>
+          </div>
+
+          <form class="newsletter-card__form">
+            <input
+              type="email"
+              class="newsletter-card__input"
+              placeholder="Insira seu e-mail"
+              aria-label="Insira seu e-mail"
+              required
+            />
+
+            <button type="submit" class="newsletter-card__button">
+              Quero me inscrever
+            </button>
+          </form>
         </div>
       </div>
-
-      <form class="newsletter-form">
-        <input
-          type="email"
-          placeholder="Insira seu e-mail"
-          aria-label="Seu e-mail"
-          required
-        />
-
-        <button type="submit">Quero me inscrever</button>
-      </form>
     </section>
 
     <!-- FOOTER -->
