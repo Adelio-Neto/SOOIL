@@ -2213,9 +2213,20 @@ main {
 ========================================================= */
 .split-heading {
   display: flex;
-  align-items: flex-end;
+  align-items: flex-start;
   justify-content: space-between;
   gap: 24px;
+}
+.split-heading > div:first-child {
+  flex: 0 1 100%;
+  max-width: 560px;
+}
+.split-heading .description {
+  max-width: 560px;
+}
+.split-heading .circle-link {
+  margin-top: 4px;
+  flex-shrink: 0;
 }
 .team-head {
   display: flex;
