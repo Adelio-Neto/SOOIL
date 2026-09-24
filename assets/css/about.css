@@ -53,9 +53,9 @@
   cursor: pointer;
   outline: 1px solid transparent;
   transition:
-    background 0.25s ease,
-    outline-color 0.25s ease,
-    transform 0.25s ease;
+    background 0.35s cubic-bezier(0.25, 1, 0.5, 1),
+    outline-color 0.35s cubic-bezier(0.25, 1, 0.5, 1),
+    transform 0.35s cubic-bezier(0.25, 1, 0.5, 1);
 }
 .sustainability-pillar:hover,
 .sustainability-pillar:focus-visible,
@@ -138,7 +138,9 @@
   margin-top: 28px;
 }
 .intro-layout__scroll .feature-photo {
-  height: 400px;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 9;
   border: 1px solid rgba(7, 16, 19, 0.12);
   border-radius: var(--radius);
   overflow: hidden;
@@ -146,9 +148,6 @@
 @media (max-width: 680px) {
   .intro-layout__scroll .about-bento {
     grid-template-columns: 1fr;
-  }
-  .intro-layout__scroll .feature-photo {
-    height: 260px;
   }
 }
 /* INVESTOR LOGOS */
@@ -166,9 +165,9 @@
   background: #fff;
   padding: 14px;
   transition:
-    border-color 0.25s ease,
-    transform 0.25s ease,
-    box-shadow 0.25s ease;
+    border-color 0.35s cubic-bezier(0.25, 1, 0.5, 1),
+    transform 0.35s cubic-bezier(0.25, 1, 0.5, 1),
+    box-shadow 0.35s cubic-bezier(0.25, 1, 0.5, 1);
 }
 .investor-logo:hover {
   border-color: #C49531;
@@ -182,8 +181,8 @@
   filter: grayscale(1);
   opacity: 0.85;
   transition:
-    filter 0.25s ease,
-    opacity 0.25s ease;
+    filter 0.35s cubic-bezier(0.25, 1, 0.5, 1),
+    opacity 0.35s cubic-bezier(0.25, 1, 0.5, 1);
 }
 .investor-logo:hover img {
   filter: grayscale(0);
@@ -280,9 +279,9 @@
   border-radius: 999px;
   padding: 6px 13px;
   transition:
-    background 0.2s ease,
-    color 0.2s ease,
-    border-color 0.2s ease;
+    background 0.35s cubic-bezier(0.25, 1, 0.5, 1),
+    color 0.35s cubic-bezier(0.25, 1, 0.5, 1),
+    border-color 0.35s cubic-bezier(0.25, 1, 0.5, 1);
 }
 .sector-swiper .media-card a:hover {
   background: #C49531;
@@ -660,8 +659,8 @@
   color: #fff;
   text-decoration: none;
   transition:
-    transform 0.3s ease,
-    box-shadow 0.3s ease;
+    transform 0.35s cubic-bezier(0.25, 1, 0.5, 1),
+    box-shadow 0.35s cubic-bezier(0.25, 1, 0.5, 1);
 }
 .opening-row:hover {
   transform: translateY(-3px);

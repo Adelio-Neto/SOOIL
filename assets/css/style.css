@@ -27,6 +27,11 @@ body {
   font-family: "DM Sans", sans-serif;
   line-height: 1.5;
 }
+html,
+body {
+  overflow-x: hidden;
+  overflow-x: clip;
+}
 img {
   display: block;
   width: 100%;
@@ -604,11 +609,13 @@ main {
   font-size: 20px;
 }
 .feature-photo {
-  min-height: 360px;
+  min-height: 260px;
 }
 .feature-photo img {
+  width: 100%;
   height: 100%;
   object-fit: cover;
+  display: block;
 }
 
 .bento-grid {
@@ -675,6 +682,10 @@ main {
 .media-grid.three {
   grid-template-columns: repeat(3, 1fr);
 }
+.media-card {
+  border-radius: var(--radius);
+  padding-bottom: 26px;
+}
 .media-card img {
   height: 190px;
   object-fit: cover;
@@ -728,7 +739,7 @@ main {
   width: 100%;
   height: 100%;
   margin-bottom: 0;
-  transition: transform 0.5s ease;
+  transition: transform 0.5s cubic-bezier(0.25, 1, 0.5, 1);
 }
 .media-card--overlay::after {
   content: "";
@@ -775,14 +786,14 @@ main {
   opacity: 0;
   transform: translateY(6px);
   transition:
-    max-height 0.35s ease,
-    padding 0.3s ease,
-    border-width 0.25s ease,
-    margin-top 0.35s ease,
-    opacity 0.3s ease 0.05s,
-    transform 0.3s ease 0.05s,
-    color 0.3s ease,
-    background 0.3s ease;
+    max-height 0.35s cubic-bezier(0.25, 1, 0.5, 1),
+    padding 0.3s cubic-bezier(0.25, 1, 0.5, 1),
+    border-width 0.25s cubic-bezier(0.25, 1, 0.5, 1),
+    margin-top 0.35s cubic-bezier(0.25, 1, 0.5, 1),
+    opacity 0.3s cubic-bezier(0.25, 1, 0.5, 1) 0.05s,
+    transform 0.3s cubic-bezier(0.25, 1, 0.5, 1) 0.05s,
+    color 0.3s cubic-bezier(0.25, 1, 0.5, 1),
+    background 0.3s cubic-bezier(0.25, 1, 0.5, 1);
 }
 .media-card--overlay:hover img {
   transform: scale(1.05);
@@ -836,13 +847,13 @@ main {
   max-height: 80px;
   transition:
     max-height 0.6s cubic-bezier(0.4, 0, 0.2, 1),
-    border-color 0.3s ease;
+    border-color 0.35s cubic-bezier(0.25, 1, 0.5, 1);
 }
 .iconGrid--item-content {
   opacity: 0;
   width: 100%;
   margin-top: -6px;
-  transition: opacity 0.45s ease 0.05s;
+  transition: opacity 0.45s cubic-bezier(0.25, 1, 0.5, 1) 0.05s;
 }
 .iconGrid--item-content .item--description {
   font-size: 14px;
@@ -1036,9 +1047,9 @@ main {
   padding: 24px 20px;
   overflow: hidden;
   transition:
-    transform 0.3s ease,
-    box-shadow 0.3s ease,
-    border-color 0.3s ease;
+    transform 0.35s cubic-bezier(0.25, 1, 0.5, 1),
+    box-shadow 0.35s cubic-bezier(0.25, 1, 0.5, 1),
+    border-color 0.35s cubic-bezier(0.25, 1, 0.5, 1);
 }
 .stat-card:hover {
   transform: translateY(-4px);
@@ -1108,6 +1119,17 @@ main {
   flex-direction: column;
 
   box-sizing: border-box;
+  transition:
+    border-color 0.35s cubic-bezier(0.25, 1, 0.5, 1),
+    transform 0.35s cubic-bezier(0.25, 1, 0.5, 1),
+    box-shadow 0.35s cubic-bezier(0.25, 1, 0.5, 1);
+}
+.news-grid .news-card:hover {
+  border-color: #c49531;
+  transform: translateY(-3px);
+
+  cursor: pointer;
+  border: 1px solid #c49531;
 }
 .news-card h3 {
   font-size: 19px;
@@ -1265,7 +1287,7 @@ main {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: transform 0.5s ease;
+  transition: transform 0.5s cubic-bezier(0.25, 1, 0.5, 1);
 }
 .team-card:hover .team-photo {
   transform: scale(1.04);
@@ -1298,7 +1320,7 @@ main {
   gap: 16px;
   background: rgba(3, 8, 10, 0.55);
   opacity: 0;
-  transition: opacity 0.3s ease;
+  transition: opacity 0.35s cubic-bezier(0.25, 1, 0.5, 1);
 }
 .team-card:hover .team-hover {
   opacity: 1;
@@ -2208,6 +2230,8 @@ main {
 }
 .investor-swiper .swiper-slide {
   height: auto;
+  background: rgba(196, 149, 49, 0.09);
+  outline-color: rgba(196, 149, 49, 0.75);
 }
 .investor-swiper .investor-logo {
   display: grid;
@@ -2218,15 +2242,59 @@ main {
   background: #fff;
   padding: 14px;
   transition:
-    border-color 0.25s ease,
-    transform 0.25s ease,
-    box-shadow 0.25s ease;
+    border-color 0.35s cubic-bezier(0.25, 1, 0.5, 1),
+    transform 0.35s cubic-bezier(0.25, 1, 0.5, 1);
 }
 .investor-swiper .investor-logo:hover {
   border-color: #c49531;
   transform: translateY(-3px);
-  box-shadow: 0 14px 30px rgba(7, 16, 19, 0.08);
+  cursor: pointer;
 }
+
+/* Sustainability pillar selector */
+.sustainability-pillar {
+  cursor: pointer;
+  outline: 1px solid transparent;
+  transition:
+    background 0.35s cubic-bezier(0.25, 1, 0.5, 1),
+    outline-color 0.35s cubic-bezier(0.25, 1, 0.5, 1),
+    transform 0.35s cubic-bezier(0.25, 1, 0.5, 1);
+}
+.sustainability-pillar:hover,
+.sustainability-pillar:focus-visible,
+.sustainability-pillar.is-active {
+  background: rgba(196, 149, 49, 0.09);
+  outline-color: rgba(196, 149, 49, 0.75);
+}
+.sustainability-pillar:hover,
+.sustainability-pillar:focus-visible {
+  transform: translateY(-3px);
+}
+
+/* Hover dos cards — mesmo efeito dos sustainability pillars
+   (anel dourado + fundo dourado suave + elevação) */
+.bento-card,
+.media-card,
+.sector-card {
+  cursor: pointer;
+  box-shadow: 0 2px 10px rgba(7, 16, 19, 0.04);
+  transition:
+    background 0.35s cubic-bezier(0.25, 1, 0.5, 1),
+    box-shadow 0.35s cubic-bezier(0.25, 1, 0.5, 1),
+    transform 0.35s cubic-bezier(0.25, 1, 0.5, 1);
+}
+.bento-card:hover,
+.bento-card:focus-visible,
+.media-card:hover,
+.media-card:focus-visible,
+.sector-card:hover,
+.sector-card:focus-visible {
+  background: rgba(196, 149, 49, 0.09);
+  border: 1px solid rgba(196, 149, 49, 0.75);
+  padding: 2px 2px;
+  transform: translateY(-3px);
+}
+
 .investor-swiper .investor-logo img {
   width: 54px;
   height: 54px;
@@ -2308,7 +2376,7 @@ main {
   height: 100%;
   object-fit: cover;
   object-position: 50% 0;
-  transition: transform 0.55s ease;
+  transition: transform 0.55s cubic-bezier(0.25, 1, 0.5, 1);
 }
 .team-card:hover .team-photo {
   transform: scale(1.03);
@@ -2556,7 +2624,7 @@ main {
   display: flex;
   flex-direction: column;
   gap: 10px;
-  padding: 14px;
+  padding: 14px 14px 24px;
   border-radius: 14px;
   overflow: hidden;
   background: transparent;
@@ -2600,9 +2668,9 @@ main {
   padding: 6px 13px;
   cursor: pointer;
   transition:
-    background 0.2s ease,
-    color 0.2s ease,
-    border-color 0.2s ease;
+    background 0.35s cubic-bezier(0.25, 1, 0.5, 1),
+    color 0.35s cubic-bezier(0.25, 1, 0.5, 1),
+    border-color 0.35s cubic-bezier(0.25, 1, 0.5, 1);
 }
 .sector-more:hover,
 .sector-more:focus-visible {
