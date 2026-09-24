@@ -1,7 +1,9 @@
 // =========================================================
-// NOTÍCIA — JSON DRIVEN
+// NEWS-DETAILS — JSON DRIVEN
 // Carrega assets/data/news.json, renderiza o artigo a partir
-// do ?id= e filtra as restantes notícias (aside + relacionadas)
+// do ?id= e filtra as restantes notícias (aside + relacionadas).
+// Nas relacionadas, clicar num card atualiza o artigo em cima
+// (detalhe completo + imagem), sem sair da página.
 // =========================================================
 
 (function () {
@@ -20,6 +22,8 @@
   var filterList = document.getElementById("newsFilterList");
   var filterEmpty = document.getElementById("newsFilterEmpty");
   var newsGrid = document.getElementById("newsPageGrid");
+
+  var allNews = [];
 
   if (!bodyWrap && !newsGrid) return;
 
@@ -64,7 +68,9 @@
         .map(
           function (n) {
             return (
-              '<a href="noticia.html?id=' +
+              '<a href="news-details.html?id=' +
+              esc(n.id) +
+              '" data-switch="' +
               esc(n.id) +
               '">' +
               esc(n.title) +
@@ -81,18 +87,43 @@
         .map(
           function (n) {
             return (
-              '<article class="news-card"><p class="eyebrow">' +
+              '<div class="swiper-slide"><article class="news-card"><img class="news-cover" src="' +
+              esc(n.image) +
+              '" alt="' +
+              esc(n.imageAlt || n.title) +
+              '" /><p class="eyebrow">' +
               esc(n.eyebrow) +
               "</p><h3>" +
               esc(n.title) +
-              '</h3><a class="icon-round" href="noticia.html?id=' +
+              '</h3><a class="icon-round" href="news-details.html?id=' +
               esc(n.id) +
-              '" aria-label="Read article">↗</a></article>'
+              '" data-switch="' +
+              esc(n.id) +
+              '" aria-label="Read article">↗</a></article></div>'
             );
           }
         )
         .join("");
+      initRelatedSwiper();
     }
+  }
+
+  function initRelatedSwiper() {
+    var el = document.querySelector(".related-swiper");
+    if (!el || typeof window.Swiper === "undefined") return;
+    if (window.__relatedSwiper) window.__relatedSwiper.destroy(true, true);
+    window.__relatedSwiper = new Swiper(el, {
+      slidesPerView: 1.15,
+      spaceBetween: 14,
+      pagination: {
+        el: ".related-pagination",
+        clickable: true
+      },
+      breakpoints: {
+        560: { slidesPerView: 2 },
+        900: { slidesPerView: 3 }
+      }
+    });
   }
 
   function renderFilterList(others) {
@@ -100,7 +131,9 @@
     filterList.innerHTML = others
       .map(function (n) {
         return (
-          '<a href="noticia.html?id=' +
+          '<a href="news-details.html?id=' +
+          esc(n.id) +
+          '" data-switch="' +
           esc(n.id) +
           '" data-title="' +
           esc(n.title.toLowerCase()) +
@@ -130,7 +163,7 @@
           esc(n.eyebrow) +
           "</p><h3>" +
           esc(n.title) +
-          '</h3><a class="icon-round" href="noticia.html?id=' +
+          '</h3><a class="icon-round" href="news-details.html?id=' +
           esc(n.id) +
           '" aria-label="Read article">↗</a></article>'
         );
@@ -181,6 +214,45 @@
     }
   }
 
+  function selectArticle(id) {
+    if (!allNews.length) return;
+    var current = allNews.filter(function (n) {
+      return n.id === id;
+    })[0];
+    if (!current) return;
+    var others = allNews.filter(function (n) {
+      return n.id !== current.id;
+    });
+    render(current, others);
+    try {
+      history.pushState(
+        { id: current.id },
+        "",
+        "news-details.html?id=" + current.id
+      );
+    } catch (e) {
+      /* ignore */
+    }
+    var target = document.getElementById("articleMain") || document.querySelector("main");
+    if (target) {
+      target.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+  }
+
+  // Clicar numa notícia (relacionadas / aside / filtro) atualiza o artigo em cima
+  document.addEventListener("click", function (e) {
+    var a = e.target.closest("a[data-switch]");
+    if (!a) return;
+    e.preventDefault();
+    selectArticle(a.getAttribute("data-switch"));
+  });
+
+  // Voltar / avançar do navegador
+  window.addEventListener("popstate", function () {
+    var id = new URLSearchParams(window.location.search).get("id");
+    if (id) selectArticle(id);
+  });
+
   fetch("assets/data/news.json", { cache: "no-store" })
     .then(function (res) {
       if (!res.ok) throw new Error("HTTP " + res.status);
@@ -188,6 +260,7 @@
     })
     .then(function (list) {
       if (!Array.isArray(list) || list.length === 0) return;
+      allNews = list;
       if (newsGrid) {
         renderNewsGrid(list);
         return;

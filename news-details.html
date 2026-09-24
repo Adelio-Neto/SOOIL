@@ -30,6 +30,12 @@
       rel="stylesheet"
     />
 
+    <!-- Swiper CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+      rel="stylesheet"
+    />
+
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
 
     <link rel="stylesheet" href="assets/css/style.css" />
@@ -175,13 +181,13 @@
           <aside class="article-aside">
             <h4>More from the sector</h4>
             <div id="articleAsideList">
-              <a href="noticia.html?id=luele-eight-million-carats"
+              <a href="news-details.html?id=luele-eight-million-carats"
                 >Luele expects to produce eight million carats</a
               >
-              <a href="noticia.html?id=huila-tax-revenue">
+              <a href="news-details.html?id=huila-tax-revenue">
                 Huíla collects 17 billion in tax revenue in nine months</a
               >
-              <a href="noticia.html?id=oil-gas-sector-news"
+              <a href="news-details.html?id=oil-gas-sector-news"
                 >News from the oil &amp; gas sector</a
               >
             </div>
@@ -217,39 +223,63 @@
             >
           </div>
 
-          <div class="news-grid" id="relatedGrid">
-            <article class="news-card" data-aos="fade-up">
-              <p class="eyebrow">News · 23 September</p>
-              <h3>Luele expects to produce eight million carats</h3>
-              <a
-                class="icon-round"
-                href="noticia.html?id=luele-eight-million-carats"
-                aria-label="Read article"
-                >↗</a
-              >
-            </article>
-            <article class="news-card" data-aos="fade-up">
-              <p class="eyebrow">News · 23 September</p>
-              <h3>
-                Huíla collects 17 billion in tax revenue in nine months
-              </h3>
-              <a
-                class="icon-round"
-                href="noticia.html?id=huila-tax-revenue"
-                aria-label="Read article"
-                >↗</a
-              >
-            </article>
-            <article class="news-card" data-aos="fade-up">
-              <p class="eyebrow">News · 23 September</p>
-              <h3>News from the oil &amp; gas sector</h3>
-              <a
-                class="icon-round"
-                href="noticia.html?id=oil-gas-sector-news"
-                aria-label="Read article"
-                >↗</a
-              >
-            </article>
+<div class="swiper related-swiper">
+            <div class="swiper-wrapper" id="relatedGrid">
+              <div class="swiper-slide">
+                <article class="news-card" data-aos="fade-up">
+                  <img
+                    class="news-cover"
+                    src="assets/img/images/gallery/full/diamante.png"
+                    alt="Luele expects to produce eight million carats"
+                  />
+                  <p class="eyebrow">News · 23 September</p>
+                  <h3>Luele expects to produce eight million carats</h3>
+                  <a
+                    class="icon-round"
+                    href="news-details.html?id=luele-eight-million-carats"
+                    aria-label="Read article"
+                    >↗</a
+                  >
+                </article>
+              </div>
+              <div class="swiper-slide">
+                <article class="news-card" data-aos="fade-up">
+                  <img
+                    class="news-cover"
+                    src="assets/img/images/gallery/full/huila.png"
+                    alt="Huíla collects 17 billion in tax revenue in nine months"
+                  />
+                  <p class="eyebrow">News · 23 September</p>
+                  <h3>
+                    Huíla collects 17 billion in tax revenue in nine months
+                  </h3>
+                  <a
+                    class="icon-round"
+                    href="news-details.html?id=huila-tax-revenue"
+                    aria-label="Read article"
+                    >↗</a
+                  >
+                </article>
+              </div>
+              <div class="swiper-slide">
+                <article class="news-card" data-aos="fade-up">
+                  <img
+                    class="news-cover"
+                    src="assets/img/images/gallery/full/01.jpg"
+                    alt="News from the oil and gas sector"
+                  />
+                  <p class="eyebrow">News · Sooil</p>
+                  <h3>News from the oil &amp; gas sector</h3>
+                  <a
+                    class="icon-round"
+                    href="news-details.html?id=oil-gas-sector-news"
+                    aria-label="Read article"
+                    >↗</a
+                  >
+                </article>
+              </div>
+            </div>
+            <div class="swiper-pagination related-pagination"></div>
           </div>
         </div>
       </section>
@@ -474,6 +504,7 @@
 
     <button class="back-top" id="backTop" aria-label="Back to top">↑</button>
 
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script src="assets/js/script.js"></script>
     <script src="assets/js/i18n.js"></script>
     <script src="assets/js/news.js"></script>

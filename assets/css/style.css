@@ -27,11 +27,6 @@ body {
   font-family: "DM Sans", sans-serif;
   line-height: 1.5;
 }
-html,
-body {
-  overflow-x: hidden;
-  overflow-x: clip;
-}
 img {
   display: block;
   width: 100%;
@@ -609,13 +604,11 @@ main {
   font-size: 20px;
 }
 .feature-photo {
-  min-height: 260px;
+  min-height: 360px;
 }
 .feature-photo img {
-  width: 100%;
   height: 100%;
   object-fit: cover;
-  display: block;
 }
 
 .bento-grid {
@@ -1094,6 +1087,31 @@ main {
   box-sizing: border-box;
 }
 
+.related-swiper {
+  overflow: hidden;
+  padding-bottom: 46px;
+}
+.related-swiper .swiper-slide {
+  height: auto;
+}
+.related-swiper .news-card {
+  height: 100%;
+}
+.related-swiper .news-card:has(img.news-cover),
+#newsPageGrid .news-card:has(img.news-cover),
+#noticias .news-card:has(img.news-cover) {
+  justify-content: flex-start;
+}
+.related-swiper .swiper-pagination-bullet {
+  background: rgba(23, 32, 38, 0.25);
+  opacity: 1;
+}
+.related-swiper .swiper-pagination-bullet-active {
+  background: #c49531;
+  width: 22px;
+  border-radius: 99px;
+}
+
 /* O grid ocupa 100% do container */
 .news-grid {
   width: 100%;
@@ -1553,7 +1571,7 @@ main {
   color: #fff;
 }
 .news-card:has(img.news-cover) .icon-round {
-  margin-top: 12px;
+  margin-top: auto;
   color: #fff;
   border-color: rgba(255, 255, 255, 0.45);
   background: rgba(0, 0, 0, 0.12);

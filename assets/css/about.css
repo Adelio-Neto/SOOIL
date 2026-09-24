@@ -121,8 +121,8 @@
   line-height: 1;
 }
 .intro-layout .intro-copy .btn-pill:hover {
-  background: #C49531;
-  border-color: #C49531;
+  background: #c49531;
+  border-color: #c49531;
   color: #fff;
 }
 .intro-layout .intro-copy .btn-pill:hover span {
@@ -140,7 +140,7 @@
 .intro-layout__scroll .feature-photo {
   width: 100%;
   height: auto;
-  aspect-ratio: 16 / 9;
+  aspect-ratio: 16 / 7;
   border: 1px solid rgba(7, 16, 19, 0.12);
   border-radius: var(--radius);
   overflow: hidden;
@@ -170,7 +170,7 @@
     box-shadow 0.35s cubic-bezier(0.25, 1, 0.5, 1);
 }
 .investor-logo:hover {
-  border-color: #C49531;
+  border-color: #c49531;
   transform: translateY(-3px);
   box-shadow: 0 14px 30px rgba(7, 16, 19, 0.08);
 }
@@ -284,8 +284,8 @@
     border-color 0.35s cubic-bezier(0.25, 1, 0.5, 1);
 }
 .sector-swiper .media-card a:hover {
-  background: #C49531;
-  border-color: #C49531;
+  background: #c49531;
+  border-color: #c49531;
   color: #fff;
 }
 .sector-controls {
@@ -839,7 +839,7 @@
 .candidate-field input:focus,
 .candidate-field select:focus {
   outline: none;
-  border-color: #C49531;
+  border-color: #c49531;
   box-shadow: 0 0 0 3px rgba(196, 149, 49, 0.18);
 }
 .candidate-field input::placeholder {
@@ -874,8 +874,8 @@
   transition: color 0.2s ease;
 }
 .candidate-submit:hover {
-  background: #C49531;
-  border-color: #C49531;
+  background: #c49531;
+  border-color: #c49531;
   color: #fff;
 }
 .candidate-note {
