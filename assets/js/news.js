@@ -83,7 +83,7 @@
 
     if (relatedGrid) {
       relatedGrid.innerHTML = others
-        .slice(0, 3)
+        .slice(0, 4)
         .map(
           function (n) {
             return (
