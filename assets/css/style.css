@@ -1962,7 +1962,7 @@ main {
   }
 
   .hero-tabs a.active {
-    flex-basis: 34%;
+    flex-basis: 28%;
     background: rgba(255, 255, 255, 0.28);
   }
 
