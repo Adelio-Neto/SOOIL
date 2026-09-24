@@ -36,8 +36,8 @@ const enToPt = {
   "New financial solutions for the next generation of energy projects.": "Novas soluções financeiras para a próxima geração de projetos de energia.",
   "What we do": "O que fazemos",
   "Investor Relations": "Relações com investidores",
-  "Investors fueling": "Investidores que impulsionam",
-  "Angola's energy future": "o futuro energético de Angola",
+  "Investors fueling": "Investidores que",
+  "the future": "impulsionam o futuro",
 
   "Strategic investments driving<br>the strength of Angola's oil sector":
     "Investimentos estratégicos que impulsionam<br>a força do setor petrolífero angolano",

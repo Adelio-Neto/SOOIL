@@ -151,10 +151,15 @@
   }
 }
 /* INVESTOR LOGOS */
+.investor-heading > div:first-child {
+  max-width: 680px;
+}
+
 .investor-logo-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   gap: 14px;
+  margin-top: 40px;
 }
 .investor-logo {
   display: grid;
