@@ -523,27 +523,34 @@ main {
 .circle-link.light b {
   border-color: rgba(255, 255, 255, 0.55);
 }
-
 /* =========================================================
    TABS / BARRA DE PROGRESSO — DESKTOP
 ========================================================= */
+
 .hero-tabs {
   position: absolute;
   z-index: 3;
   left: 50%;
   transform: translateX(-50%);
   bottom: 0;
+
   display: grid;
   grid-template-columns: repeat(4, 1fr);
 }
+
 .hero-tabs a {
   position: relative;
   padding: 22px 16px;
+
   border-top: 1px solid rgba(255, 255, 255, 0.2);
+
   color: rgba(255, 255, 255, 0.68);
   font-size: 10px;
   text-transform: uppercase;
   letter-spacing: 0.08em;
+
+  text-align: center; /* ← centraliza o texto */
+
   overflow: hidden;
   cursor: pointer;
 }
