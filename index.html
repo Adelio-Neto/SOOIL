@@ -13,6 +13,12 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link rel="icon" type="image/png" href="assets/img/logo/favicone.png" />
     <link rel="icon" type="image/x-icon" href="assets/img/logo/favicone.png" />
+    <link
+      rel="preload"
+      as="image"
+      href="assets/img/images/slide/slide01.jpg"
+      fetchpriority="high"
+    />
 
     <link
       href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700&display=swap"
@@ -42,8 +48,13 @@
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
 
     <link rel="stylesheet" href="assets/css/style.css" />
+      <script>document.documentElement.classList.add('site-loading');window.addEventListener('load',()=>{window.setTimeout(()=>document.documentElement.classList.remove('site-loading'),250);});</script>
   </head>
   <body>
+    <div class="site-preloader" role="status" aria-label="A carregar o site">
+      
+      <span class="site-preloader__spinner" aria-hidden="true"></span>
+    </div>
     <!-- HEADER -->
     <header class="header" id="top">
       <a class="brand" href="#top"
@@ -104,6 +115,7 @@
           class="hero-bg active"
           data-slide="0"
           src="assets/img/images/slide/slide01.jpg"
+          fetchpriority="high"
           alt="Professional working at an industrial facility"
         />
         <img
