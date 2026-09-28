@@ -40,8 +40,13 @@
 
     <link rel="stylesheet" href="assets/css/style.css" />
     <link rel="stylesheet" href="assets/css/about.css" />
+      <link rel="preload" as="image" href="assets/img/images/slide/slide01.jpg" fetchpriority="high" />
+      <script>document.documentElement.classList.add('site-loading');window.addEventListener('load',()=>{window.setTimeout(()=>document.documentElement.classList.remove('site-loading'),250);});</script>
   </head>
   <body>
+    <div class="site-preloader" role="status" aria-label="A carregar o site">
+      <span class="site-preloader__spinner" aria-hidden="true"></span>
+    </div>
     <!-- HEADER -->
     <header class="header" id="top">
       <a class="brand" href="index.html"
@@ -149,6 +154,50 @@
             <p>
               More than three decades of business experience and 26 years of
               banking expertise guide every investment decision.
+            </p>
+          </div>
+          <div class="timeline-item">
+            <span class="timeline-dot"></span>
+            <div class="timeline-head">
+              <h3>International networks</h3>
+              <span class="timeline-year">2005</span>
+            </div>
+            <p>
+              The team expands its network across international financial
+              institutions, bringing global best practices to Angola.
+            </p>
+          </div>
+          <div class="timeline-item">
+            <span class="timeline-dot"></span>
+            <div class="timeline-head">
+              <h3>Sector expertise</h3>
+              <span class="timeline-year">2012</span>
+            </div>
+            <p>
+              Partners deepen their knowledge of the energy value chain, from
+              exploration to production and infrastructure.
+            </p>
+          </div>
+          <div class="timeline-item">
+            <span class="timeline-dot"></span>
+            <div class="timeline-head">
+              <h3>The platform</h3>
+              <span class="timeline-year">2018</span>
+            </div>
+            <p>
+              Sooil Services, Lda is established as a Private Equity platform
+              dedicated to producing oil fields.
+            </p>
+          </div>
+          <div class="timeline-item">
+            <span class="timeline-dot"></span>
+            <div class="timeline-head">
+              <h3>Producing fields</h3>
+              <span class="timeline-year">2023</span>
+            </div>
+            <p>
+              The company focuses on producing fields, targeting predictable
+              cash flows and higher recovery rates with modern technology.
             </p>
           </div>
           <div class="timeline-item">

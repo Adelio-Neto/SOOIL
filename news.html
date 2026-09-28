@@ -34,8 +34,13 @@
 
     <link rel="stylesheet" href="assets/css/style.css" />
     <link rel="stylesheet" href="assets/css/about.css" />
+      <link rel="preload" as="image" href="assets/img/images/gallery/full/sector.png" fetchpriority="high" />
+      <script>document.documentElement.classList.add('site-loading');window.addEventListener('load',()=>{window.setTimeout(()=>document.documentElement.classList.remove('site-loading'),250);});</script>
   </head>
   <body>
+    <div class="site-preloader" role="status" aria-label="A carregar o site">
+      <span class="site-preloader__spinner" aria-hidden="true"></span>
+    </div>
     <!-- HEADER -->
     <header class="header" id="top">
       <a class="brand" href="index.html"

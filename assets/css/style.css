@@ -19,6 +19,7 @@
 }
 html {
   scroll-behavior: smooth;
+  overflow-x: clip;
 }
 body {
   margin: 0;
@@ -100,6 +101,52 @@ main {
 .eyebrow.light {
   color: rgba(255, 255, 255, 0.72);
 }
+
+/* Preloader visível enquanto os recursos da página terminam de carregar. */
+.site-preloader {
+  position: fixed;
+  inset: 0;
+  z-index: 99999;
+  display: grid;
+  place-content: center;
+  justify-items: center;
+  gap: 22px;
+  background: var(--dark);
+  opacity: 0;
+  visibility: hidden;
+  transition:
+    opacity 0.35s ease,
+    visibility 0.35s ease;
+}
+
+html.site-loading .site-preloader {
+  opacity: 1;
+  visibility: visible;
+}
+
+.site-preloader__spinner {
+  width: 28px;
+  height: 28px;
+  border: 2px solid rgba(255, 255, 255, 0.25);
+  border-top-color: #c49531;
+  border-radius: 50%;
+  animation: preloader-spin 0.8s linear infinite;
+}
+
+@keyframes preloader-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .site-preloader,
+  .site-preloader__spinner {
+    transition: none;
+    animation: none;
+  }
+}
+
 .roundeder {
   border-radius: 12px;
   overflow: hidden;
@@ -430,7 +477,11 @@ main {
    3. HERO
 ========================================================= */
 .hero {
-  min-height: 570px;
+  /* Hero exclusivo da página inicial: ocupa todo o ecrã ao abrir. */
+  min-height: 100vh;
+  min-height: 100svh;
+  height: 100vh;
+  height: 100svh;
   position: relative;
   color: white;
   overflow: hidden;
@@ -706,6 +757,16 @@ main {
   -webkit-box-orient: vertical;
   overflow: hidden;
   min-height: 36px;
+}
+#sustentabilidade .media-card {
+  box-shadow: none;
+}
+#sustentabilidade .media-card:hover,
+#sustentabilidade .media-card:focus-within {
+  background: rgba(196, 149, 49, 0.09);
+  outline-color: rgba(196, 149, 49, 0.85);
+  box-shadow: none;
+  transform: translateY(-3px);
 }
 #sustentabilidade .media-card a.lang-btn-dark {
   color: #000;
@@ -1137,17 +1198,6 @@ main {
   flex-direction: column;
 
   box-sizing: border-box;
-  transition:
-    border-color 0.35s cubic-bezier(0.25, 1, 0.5, 1),
-    transform 0.35s cubic-bezier(0.25, 1, 0.5, 1),
-    box-shadow 0.35s cubic-bezier(0.25, 1, 0.5, 1);
-}
-.news-grid .news-card:hover {
-  border-color: #c49531;
-  transform: translateY(-3px);
-
-  cursor: pointer;
-  border: 1px solid #c49531;
 }
 .news-card h3 {
   font-size: 19px;
@@ -2044,8 +2094,12 @@ main {
   }
 
   .bento-grid {
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr;
     gap: 9px;
+  }
+
+  .header {
+    padding-inline: max(14px, calc((100vw - var(--container)) / 2));
   }
 
   .bento-card {
@@ -2293,12 +2347,16 @@ main {
    (anel dourado + fundo dourado suave + elevação) */
 .bento-card,
 .media-card,
-.sector-card {
+.sector-card,
+.news-grid .news-card {
   cursor: pointer;
+  outline: 1px solid transparent;
+  outline-offset: 4px;
   box-shadow: 0 2px 10px rgba(7, 16, 19, 0.04);
   transition:
     background 0.35s cubic-bezier(0.25, 1, 0.5, 1),
     box-shadow 0.35s cubic-bezier(0.25, 1, 0.5, 1),
+    outline-color 0.35s cubic-bezier(0.25, 1, 0.5, 1),
     transform 0.35s cubic-bezier(0.25, 1, 0.5, 1);
 }
 .bento-card:hover,
@@ -2306,10 +2364,12 @@ main {
 .media-card:hover,
 .media-card:focus-visible,
 .sector-card:hover,
-.sector-card:focus-visible {
+.sector-card:focus-visible,
+.news-grid .news-card:hover,
+.news-grid .news-card:focus-visible {
   background: rgba(196, 149, 49, 0.09);
-  border: 1px solid rgba(196, 149, 49, 0.75);
-  padding: 2px 2px;
+  outline-color: rgba(196, 149, 49, 0.85);
+  box-shadow: 0 12px 24px rgba(7, 16, 19, 0.12);
   transform: translateY(-3px);
 }
 

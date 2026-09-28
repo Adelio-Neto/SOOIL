@@ -743,9 +743,13 @@
 /* Apenas os heróis das páginas internas; o hero do index usa .hero. */
 @media (max-width: 768px) {
   .page-hero--compact {
-    height: 210px;
-    min-height: 210px;
-    padding: 56px 0 16px;
+    height: 220px;
+    min-height: 220px;
+    padding: 64px 0 20px;
+  }
+  /* A margem esquerda acompanha exatamente o alinhamento do logótipo. */
+  .page-hero .container {
+    width: min(calc(100% - 40px), var(--container));
   }
   .page-hero h1 {
     font-size: clamp(28px, 8vw, 34px);
@@ -763,10 +767,6 @@
 @media (max-width: 680px) {
   .about-bento.about-mvv {
     grid-template-columns: 1fr;
-  }
-  .page-hero {
-    min-height: 400px;
-    padding: 110px 0 48px;
   }
   .about-card {
     min-height: 220px;

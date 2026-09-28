@@ -203,6 +203,18 @@ const enToPt = {
   "The track record": "O historial",
   "More than three decades of business experience and 26 years of banking expertise guide every investment decision.":
     "Mais de três décadas de experiência empresarial e 26 anos de experiência bancária orientam cada decisão de investimento.",
+  "International networks": "Redes internacionais",
+  "The team expands its network across international financial institutions, bringing global best practices to Angola.":
+    "A equipa expande a sua rede junto de instituições financeiras internacionais, trazendo as melhores práticas globais para Angola.",
+  "Sector expertise": "Conhecimento do setor",
+  "Partners deepen their knowledge of the energy value chain, from exploration to production and infrastructure.":
+    "Os sócios aprofundam o conhecimento da cadeia de valor da energia, da exploração à produção e infraestruturas.",
+  "The platform": "A plataforma",
+  "Sooil Services, Lda is established as a Private Equity platform dedicated to producing oil fields.":
+    "A Sooil Services, Lda é criada como plataforma de Private Equity dedicada a campos de petróleo em produção.",
+  "Producing fields": "Campos em produção",
+  "The company focuses on producing fields, targeting predictable cash flows and higher recovery rates with modern technology.":
+    "A empresa foca-se em campos em produção, procurando fluxos de caixa previsíveis e maiores taxas de recuperação com tecnologia moderna.",
   "Today": "Hoje",
   "Sooil Services invests in producing oil fields, creating lasting value for shareholders, for the sector and for Angola.":
     "A Sooil Services investe em campos de petróleo em produção, criando valor duradouro para os acionistas, para o setor e para Angola.",
