@@ -11,6 +11,39 @@ const prefersReducedMotion = window.matchMedia(
   "(prefers-reduced-motion: reduce)"
 ).matches;
 
+// Anima os elementos marcados com data-aos sempre que entram ou saem do ecrã.
+// O observer acompanha os dois sentidos do scroll; a classe é removida ao sair.
+const scrollAnimatedElements = document.querySelectorAll("[data-aos]");
+
+if ("IntersectionObserver" in window && !prefersReducedMotion) {
+  const scrollAnimationObserver = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        entry.target.classList.toggle("is-in-view", entry.isIntersecting);
+      });
+    },
+    {
+      threshold: 0.12,
+      // Dá uma pequena margem para iniciar a transição enquanto entra no ecrã.
+      rootMargin: "0px 0px -4% 0px"
+    }
+  );
+
+  scrollAnimatedElements.forEach((element) => {
+    // Mantém os atrasos definidos no HTML (data-aos-delay).
+    const delay = Number(element.dataset.aosDelay);
+    if (Number.isFinite(delay) && delay > 0) {
+      element.style.setProperty("--scroll-animation-delay", `${delay}ms`);
+    }
+    scrollAnimationObserver.observe(element);
+  });
+} else {
+  // Sem suporte à API, ou com movimento reduzido, o conteúdo fica visível.
+  scrollAnimatedElements.forEach((element) => {
+    element.classList.add("is-in-view");
+  });
+}
+
 // Mobile menu
 menuBtn.addEventListener("click", () => {
   const isOpen = mobileNav.classList.toggle("open");

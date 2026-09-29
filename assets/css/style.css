@@ -50,6 +50,31 @@ button {
   padding: var(--space) 0;
 }
 
+/* Fade reversível ativado pelo IntersectionObserver em script.js. */
+[data-aos] {
+  opacity: 0;
+  transform: translateY(18px);
+  transition:
+    opacity 650ms ease var(--scroll-animation-delay, 0ms),
+    transform 650ms ease var(--scroll-animation-delay, 0ms);
+  will-change: opacity, transform;
+}
+
+[data-aos].is-in-view {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  [data-aos],
+  [data-aos].is-in-view {
+    opacity: 1;
+    transform: none;
+    transition: none;
+    will-change: auto;
+  }
+}
+
 h1,
 h2,
 h3,
@@ -92,7 +117,7 @@ main {
 }
 
 .eyebrow {
-  color: var(--muted);
+  color: #c49531;
   text-transform: uppercase;
   letter-spacing: 0.11em;
   font-size: 12px;
@@ -2766,7 +2791,7 @@ html.site-loading .site-preloader {
 
 .newsletter.section {
   --brand-green: #c49531;
-  padding-top: 60px;
+  padding-top: 10px;
   padding-bottom: 20px;
 }
 
