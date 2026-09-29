@@ -248,23 +248,6 @@
           </div>
         </div>
 
-        <div class="video-modal" id="videoModal" aria-hidden="true">
-          <button
-            class="video-modal-close"
-            id="videoClose"
-            aria-label="Close video"
-            >✕</button
-          >
-          <div class="video-modal-frame">
-            <iframe
-              class="video-frame"
-              data-src="https://www.youtube-nocookie.com/embed/D-isLcJybbY?rel=0"
-              title="YouTube video player"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-              allowfullscreen
-            ></iframe>
-          </div>
-        </div>
       </section>
       <!-- TEAM -->
       <section class="container team-section" id="team">
@@ -517,6 +500,20 @@
       </section>
 
     </main>
+
+    <!-- Fora de main para o posicionamento fixo cobrir o ecrã corretamente. -->
+    <div class="video-modal" id="videoModal" aria-hidden="true">
+      <button class="video-modal-close" id="videoClose" aria-label="Close video">✕</button>
+      <div class="video-modal-frame">
+        <iframe
+          class="video-frame"
+          data-src="https://www.youtube-nocookie.com/embed/D-isLcJybbY?rel=0"
+          title="YouTube video player"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          allowfullscreen
+        ></iframe>
+      </div>
+    </div>
 
     <section id="newsletter" class="newsletter section" data-aos="fade-up">
       <div class="container">

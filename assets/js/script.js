@@ -13,10 +13,26 @@ const prefersReducedMotion = window.matchMedia(
 
 // Anima os elementos marcados com data-aos sempre que entram ou saem do ecrã.
 // O observer acompanha os dois sentidos do scroll; a classe é removida ao sair.
-const scrollAnimatedElements = document.querySelectorAll("[data-aos]");
+let scrollAnimationObserver = null;
+
+// Também permite registar conteúdo criado depois do carregamento inicial.
+window.observeScrollAnimations = (root = document) => {
+  root.querySelectorAll("[data-aos]").forEach((element) => {
+    const delay = Number(element.dataset.aosDelay);
+    if (Number.isFinite(delay) && delay > 0) {
+      element.style.setProperty("--scroll-animation-delay", `${delay}ms`);
+    }
+
+    if (scrollAnimationObserver) {
+      scrollAnimationObserver.observe(element);
+    } else {
+      element.classList.add("is-in-view");
+    }
+  });
+};
 
 if ("IntersectionObserver" in window && !prefersReducedMotion) {
-  const scrollAnimationObserver = new IntersectionObserver(
+  scrollAnimationObserver = new IntersectionObserver(
     (entries) => {
       entries.forEach((entry) => {
         entry.target.classList.toggle("is-in-view", entry.isIntersecting);
@@ -29,19 +45,10 @@ if ("IntersectionObserver" in window && !prefersReducedMotion) {
     }
   );
 
-  scrollAnimatedElements.forEach((element) => {
-    // Mantém os atrasos definidos no HTML (data-aos-delay).
-    const delay = Number(element.dataset.aosDelay);
-    if (Number.isFinite(delay) && delay > 0) {
-      element.style.setProperty("--scroll-animation-delay", `${delay}ms`);
-    }
-    scrollAnimationObserver.observe(element);
-  });
+  window.observeScrollAnimations();
 } else {
   // Sem suporte à API, ou com movimento reduzido, o conteúdo fica visível.
-  scrollAnimatedElements.forEach((element) => {
-    element.classList.add("is-in-view");
-  });
+  window.observeScrollAnimations();
 }
 
 // Mobile menu

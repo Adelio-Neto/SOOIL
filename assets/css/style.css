@@ -156,8 +156,8 @@ button {
   opacity: 0;
   transform: translateY(18px);
   transition:
-    opacity 650ms ease var(--scroll-animation-delay, 0ms),
-    transform 650ms ease var(--scroll-animation-delay, 0ms);
+    opacity 750ms ease var(--scroll-animation-delay, 0ms),
+    transform 750ms ease var(--scroll-animation-delay, 0ms);
   will-change: opacity, transform;
 }
 
@@ -1443,8 +1443,12 @@ html.site-loading .site-preloader {
   animation: playPulse 2.2s ease-out infinite;
 }
 .play-button:hover {
-  background: rgba(38, 183, 224, 0.55);
+  background: #c49531;
+  border-color: #c49531;
   transform: scale(1.06);
+}
+.play-button:hover::before {
+  border-color: #c49531;
 }
 
 @keyframes playPulse {

@@ -169,7 +169,10 @@
         );
       })
       .join("");
-    if (typeof window.AOS === "object") window.AOS.refreshHard();
+    // Regista os cards recém-criados no observer de fade ao fazer scroll.
+    if (typeof window.observeScrollAnimations === "function") {
+      window.observeScrollAnimations(newsGrid);
+    }
     if (typeof window.setLanguage === "function" && window.currentLang) {
       window.setLanguage(window.currentLang);
     }
