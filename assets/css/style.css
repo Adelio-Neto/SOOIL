@@ -645,7 +645,8 @@ html.site-loading .site-preloader {
 .hero-content #heroLink:hover,
 .hero-content #heroLink:focus-visible {
   border-color: #c49531;
-  background-color: rgba(196, 149, 49, 0.16);
+  background-color: #c49531;
+  color: #fff;
 }
 .hero h1 {
   max-width: 780px;
@@ -989,6 +990,23 @@ html.site-loading .site-preloader {
 }
 .media-card--overlay:hover .media-card__body a:hover {
   color: #f1e29f;
+}
+.belief-section .media-card__body a {
+  border-color: rgba(255, 255, 255, 0.4);
+  background: transparent;
+  color: #fff;
+}
+.belief-section .media-card--overlay:hover .media-card__body a,
+.belief-section .media-card--overlay:focus-within .media-card__body a {
+  border-color: rgba(255, 255, 255, 0.4);
+  background: transparent;
+  color: #fff;
+}
+.belief-section .media-card--overlay .media-card__body a:hover,
+.belief-section .media-card--overlay .media-card__body a:focus-visible {
+  border-color: #c49531;
+  background: #c49531;
+  color: #fff;
 }
 .media-card--overlay .media-detail {
   display: none;
@@ -2104,6 +2122,11 @@ html.site-loading .site-preloader {
   pointer-events: auto;
   transform: translateY(0);
 }
+.back-top:hover,
+.back-top:focus-visible {
+  background: #c49531;
+  color: #fff;
+}
 
 /* =========================================================
    10. RESPONSIVO — TABLET (950px)
@@ -2559,9 +2582,9 @@ html.site-loading .site-preloader {
   color: var(--ink);
 }
 .team-controls .swiper-btn:hover {
-  background: var(--dark);
+  background: #c49531;
   color: #fff;
-  border-color: var(--dark);
+  border-color: #c49531;
 }
 
 .team-swiper {
