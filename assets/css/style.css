@@ -2529,6 +2529,13 @@ html.site-loading .site-preloader {
   transform: translateY(-3px);
 }
 
+/* Os cards de sustentabilidade e setores ficam sem sombra. */
+.sector-grid .sector-card,
+.sector-grid .sector-card:hover,
+.sector-grid .sector-card:focus-visible {
+  box-shadow: none;
+}
+
 .investor-swiper .investor-logo img {
   width: 54px;
   height: 54px;
