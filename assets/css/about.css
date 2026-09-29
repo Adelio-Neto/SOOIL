@@ -5,10 +5,10 @@
   position: relative;
   min-height: 460px;
   display: flex;
-  align-items: flex-end;
+  align-items: center;
   color: #fff;
   overflow: hidden;
-  padding: 130px 0 64px;
+  padding: 100px 0;
 }
 .page-hero-bg {
   position: absolute;
@@ -44,8 +44,9 @@
   z-index: 2;
 }
 .page-hero--compact {
-  min-height: 260px;
-  padding: 90px 0 40px;
+  min-height: 320px;
+  /* A área de alinhamento começa abaixo da navbar sobreposta à hero. */
+  padding: 84px 0 0;
 }
 
 /* Sustainability pillar selector */
@@ -767,9 +768,9 @@
 /* Apenas os heróis das páginas internas; o hero do index usa .hero. */
 @media (max-width: 768px) {
   .page-hero--compact {
-    height: 220px;
-    min-height: 220px;
-    padding: 64px 0 20px;
+    height: auto;
+    min-height: 260px;
+    padding: 84px 0 0;
   }
   /* A margem esquerda acompanha exatamente o alinhamento do logótipo. */
   .page-hero .container {
