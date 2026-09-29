@@ -1633,6 +1633,9 @@ html.site-loading .site-preloader {
   font-size: 22px;
   margin: 6px 0 12px;
 }
+.team-modal .team-detail-panel h3 {
+  color: #c49531;
+}
 .team-detail-panel p {
   font-size: 14px;
   line-height: 1.7;
