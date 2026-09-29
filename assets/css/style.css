@@ -50,6 +50,107 @@ button {
   padding: var(--space) 0;
 }
 
+/* Área de documentos da empresa, antes da faixa de parceiros. */
+.company-documents {
+  padding-top: 34px;
+}
+.company-documents__heading {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 24px;
+  margin-bottom: 30px;
+}
+.company-documents__heading h2 {
+  margin-bottom: 0;
+}
+.company-documents__note {
+  max-width: 260px;
+  padding-bottom: 7px;
+  color: var(--muted);
+  font-size: 14px;
+}
+.company-documents__panel {
+  padding: clamp(24px, 4vw, 34px);
+  border-radius: 18px;
+  background: #fff;
+}
+.company-documents__panel h3 {
+  margin-bottom: 18px;
+  font-size: 21px;
+  font-weight: 500;
+}
+.company-documents__list {
+  border-top: 1px solid var(--line);
+}
+.company-document {
+  display: flex;
+  min-height: 76px;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  border-bottom: 1px solid var(--line);
+}
+.company-document__name {
+  display: grid;
+  gap: 4px;
+}
+.company-document__name > span {
+  font-size: 16px;
+}
+.company-document__name small {
+  color: var(--muted);
+  font-size: 12px;
+}
+.company-document__download {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  border: 0;
+  background: transparent;
+  color: var(--blue);
+  font: inherit;
+  font-size: 13px;
+}
+.company-document__download svg {
+  width: 23px;
+  height: 23px;
+  fill: none;
+  stroke: currentColor;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 1.7;
+}
+.company-document__download:disabled {
+  cursor: not-allowed;
+  opacity: 0.55;
+}
+.company-documents__footnote {
+  margin: 18px 0 0;
+  color: var(--muted);
+  font-size: 13px;
+  text-align: right;
+}
+@media (max-width: 600px) {
+  .company-documents__heading {
+    align-items: start;
+    flex-direction: column;
+    gap: 12px;
+  }
+  .company-document {
+    align-items: start;
+    flex-direction: column;
+    gap: 12px;
+    padding: 16px 0;
+  }
+  .company-document__download span {
+    display: none;
+  }
+  .company-documents__footnote {
+    text-align: left;
+  }
+}
+
 /* Fade reversível ativado pelo IntersectionObserver em script.js. */
 [data-aos] {
   opacity: 0;
