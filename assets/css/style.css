@@ -108,7 +108,7 @@ button {
   gap: 10px;
   border: 0;
   background: transparent;
-  color: var(--blue);
+  color: #c49531;
   font: inherit;
   font-size: 13px;
 }
@@ -123,13 +123,7 @@ button {
 }
 .company-document__download:disabled {
   cursor: not-allowed;
-  opacity: 0.55;
-}
-.company-documents__footnote {
-  margin: 18px 0 0;
-  color: var(--muted);
-  font-size: 13px;
-  text-align: right;
+  opacity: 1;
 }
 @media (max-width: 600px) {
   .company-documents__heading {
@@ -142,12 +136,6 @@ button {
     flex-direction: column;
     gap: 12px;
     padding: 16px 0;
-  }
-  .company-document__download span {
-    display: none;
-  }
-  .company-documents__footnote {
-    text-align: left;
   }
 }
 
@@ -646,6 +634,18 @@ html.site-loading .site-preloader {
 .hero-content {
   position: relative;
   z-index: 2;
+}
+.hero-content #heroLink {
+  min-height: 44px;
+  padding: 10px 18px;
+  border: 1px solid rgba(255, 255, 255, 0.65);
+  border-radius: 999px;
+  transition: border-color 0.25s ease, background-color 0.25s ease;
+}
+.hero-content #heroLink:hover,
+.hero-content #heroLink:focus-visible {
+  border-color: #c49531;
+  background-color: rgba(196, 149, 49, 0.16);
 }
 .hero h1 {
   max-width: 780px;
@@ -2906,7 +2906,7 @@ html.site-loading .site-preloader {
 .newsletter-card {
   font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
   background: #fff;
-  border-radius: 4px;
+  border-radius: var(--radius);
   padding: 24px 32px;
   display: flex;
   align-items: center;
