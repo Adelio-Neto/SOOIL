@@ -359,6 +359,26 @@
 .about-card .card-content .eyebrow {
   margin-bottom: 8px;
 }
+.about-bento.about-mvv .about-card {
+  transition: color 0.35s ease, background 0.35s ease, box-shadow 0.35s ease,
+    outline-color 0.35s ease, transform 0.35s ease;
+}
+.about-bento.about-mvv .about-card:hover,
+.about-bento.about-mvv .about-card:focus-visible {
+  background: #c49531;
+  color: var(--dark);
+  outline-color: #c49531;
+}
+.about-bento.about-mvv .about-card:hover .card-content p,
+.about-bento.about-mvv .about-card:focus-visible .card-content p,
+.about-bento.about-mvv .about-card:hover .about-card-list li,
+.about-bento.about-mvv .about-card:focus-visible .about-card-list li {
+  color: rgba(7, 16, 19, 0.85);
+}
+.about-bento.about-mvv .about-card:hover .card-content .eyebrow,
+.about-bento.about-mvv .about-card:focus-visible .card-content .eyebrow {
+  color: var(--dark);
+}
 
 .card-dark {
   background: linear-gradient(135deg, #0c1a20 0%, #071013 100%);
@@ -393,8 +413,12 @@
 }
 .about-card-list li::before {
   content: "→";
-  color: var(--blue);
+  color: #c49531;
   font-weight: 600;
+}
+.about-bento.about-mvv .about-card:hover .about-card-list li::before,
+.about-bento.about-mvv .about-card:focus-visible .about-card-list li::before {
+  color: #fff;
 }
 .about-card-list li:last-child {
   border-bottom: 0;
