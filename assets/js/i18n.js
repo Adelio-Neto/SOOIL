@@ -403,7 +403,7 @@ const enToPt = {
   "Sooil Services continues to assess opportunities in the province, where infrastructure and production go hand in hand.": "A Sooil Services continua a avaliar oportunidades na província, onde infraestrutura e produção caminham lado a lado.",
 
   "Structured financing for": "Financiamento estruturado para",
-  "Angola's oil & gas projects": "os projetos de petróleo e gás de Angola",
+  "Angola's oil & gas projects": "os projetos de petróleo e gás",
   "Our expertise": "A nossa experiência",
   "We combine banking expertise, private equity and a deep knowledge of Angola's energy sector to finance exploration and production.":
     "Combinamos experiência bancária, private equity e um profundo conhecimento do setor energético angolano para financiar a exploração e a produção.",
