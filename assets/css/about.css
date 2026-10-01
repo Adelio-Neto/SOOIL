@@ -44,7 +44,7 @@
   z-index: 2;
 }
 .page-hero--compact {
-  min-height: 320px;
+  min-height: 380px;
   /* A área de alinhamento começa abaixo da navbar sobreposta à hero. */
   padding: 84px 0 0;
 }
