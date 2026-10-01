@@ -39,6 +39,9 @@
   margin: 14px 0 30px;
   max-width: 860px;
 }
+.page-hero--what-we-do h1 {
+  max-width: 900px;
+}
 .page-hero .circle-link {
   position: relative;
   z-index: 2;
